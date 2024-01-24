@@ -11,8 +11,8 @@ const gulp 			= require('gulp'),
 	  imagemin		= require('gulp-imagemin'),
 	  changed		= require('gulp-changed');
 
-const webpack		= require('webpack-stream');
-const babel			= require('gulp-babel');
+//const webpack		= require('webpack-stream');
+//const babel			= require('gulp-babel');
 
 // === VARIABLES ===
 // -- html include
@@ -36,12 +36,13 @@ const plumberNotify = (title) => {
 	}
 };
 
-// -- babel
+// -- babel 
+/*
 const babelSettings = {
 	"presets": [
 		"@babel/preset-env"
 	]
-};
+} */ 
 // end VARIABLES
 
 // === clean build ===
@@ -109,7 +110,7 @@ gulp.task('js:dev', function(){
 	.pipe(changed('./build/js'))
 	.pipe(plumber(plumberNotify('JS')))
 	//.pipe(babel(babelSettings))
-	.pipe(webpack(require('./../webpack.config.js')))
+	//.pipe(webpack(require('./../webpack.config.js')))
 	.pipe(gulp.dest('./build/js/'))
 });
 // === end JS ===
@@ -127,8 +128,8 @@ gulp.task('watch:dev', function(){
 	gulp.watch('./src/scss/**/*.scss', gulp.parallel('sass:dev'));
 	gulp.watch('./src/**/*.html', gulp.parallel('html:dev'));
 	gulp.watch('./src/images/**/*', gulp.parallel('images:dev'));
-	gulp.watch('./src/fonts/**/*', gulp.parallel('fonts:dev'));
-	gulp.watch('./src/files/**/*', gulp.parallel('files:dev'));
+	//gulp.watch('./src/fonts/**/*', gulp.parallel('fonts:dev'));
+	//gulp.watch('./src/files/**/*', gulp.parallel('files:dev'));
 	gulp.watch('./src/js/**/*.js', gulp.parallel('js:dev'));
 });
 // === end WATCH ===

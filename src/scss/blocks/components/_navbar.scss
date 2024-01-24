@@ -1,0 +1,11 @@
+.navbar {
+
+	&-brand {
+		font-size: 26px;
+		font-weight: 700;
+		line-height: 1.2;
+		@include mw768 {font-size: 24px}
+	}
+
+	&-toggler {display: none}
+}

@@ -1,23 +1,20 @@
+html {font-size: 10px}
 html,
 body {
 	scroll-behavior: smooth;
 }
 body {
-	font-family: var(--font-main);
-	color: var(--text-color);
-	background-color: var(--page-bg);
-}
-.body-wrapper {
-	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
-}
-.title-h2 {
-	font-weight: 700;
-    font-size: clamp(32px, 1.702rem + 1.49vw, 42px);
-}
+	min-height: 100vh;
 
-h1 {
-	font-weight: 700;
-	text-transform: uppercase;
+	font-family: var(--font-main);
+	font-style: normal;
+	font-weight: 400;
+	font-size: 1.8rem;
+	color: var(--dark);
+	line-height: 1.4;
+	font-optical-sizing: auto;
+
+	background-color: var(--white);
 }

@@ -1,43 +1,34 @@
 :root {
-	--container-width: 1230px;
-	--container-padding: 15px;
+	--container-width: 1640px;
+	--container-padding: 20px;
 
-	--text-color: #fff;
-	--text-muted: #8d8d8d;
-	--text-light: #ffffff;
-	--accent: #281500;
-	--page-bg: #77644d;
+	--dark: #101113;
+	--white: #ffffff;
+	--accent: #4C87FB;
+	--red: #E14D3C;
+	--green: #28A745;
+	--gray200: #EDF0F4;
+	--gray400: #CBD3DA;
+	--gray600: #6C757D;
 
-	--font-main: 'Jura', sans-serif;
-
+	--font-main: "Manrope", sans-serif;
 }
 
-@mixin retina-bg($image) {
-	@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-		background-image: $image;
-	}
-}
 
-@mixin mw1400(){
-	@media (max-width: 1400px) {
+@mixin mw1440(){
+	@media (max-width: 1440px) {
 		@content;
 	}
 }
 
-@mixin mw992(){
-	@media (max-width: 992px) {
+@mixin mw1024(){
+	@media (max-width: 1024px) {
 		@content;
 	}
 }
 
 @mixin mw768(){
-	@media (max-width: 768px) {
-		@content;
-	}
-}
-
-@mixin mw575(){
-	@media (max-width: 575px) {
+	@media (max-width: 767px) {
 		@content;
 	}
 }

@@ -63,5 +63,5 @@
 	//display: none;
 	z-index: 999;
 	
-	@include mw992 {display: flex}
+	@include mw1024 {display: flex}
 }
