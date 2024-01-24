@@ -1,0 +1,42 @@
+.main {
+	position: relative;	
+	display: flex;
+	align-items: center;
+
+	&::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 0;
+		background: url('../images/ava.jpg') no-repeat center;
+		background-size: cover;
+	}
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 1;
+		backdrop-filter: blur(5px);
+		-webkit-backdrop-filter: blur(5px);
+	}
+	.container {
+		position: relative;
+		z-index: 2;
+		text-align: center;
+	}
+
+	h1 {
+		display: inline-block;
+		padding: 40px 80px;
+		text-align: center;
+		font-size: 72px;
+		text-shadow: 0 0 10px #000;
+		box-shadow: 0 0 18px #000000;
+	}
+}

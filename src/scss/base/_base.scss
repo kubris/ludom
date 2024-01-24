@@ -1,0 +1,23 @@
+html,
+body {
+	scroll-behavior: smooth;
+}
+body {
+	font-family: var(--font-main);
+	color: var(--text-color);
+	background-color: var(--page-bg);
+}
+.body-wrapper {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+.title-h2 {
+	font-weight: 700;
+    font-size: clamp(32px, 1.702rem + 1.49vw, 42px);
+}
+
+h1 {
+	font-weight: 700;
+	text-transform: uppercase;
+}

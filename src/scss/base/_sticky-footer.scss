@@ -1,0 +1,8 @@
+html, body {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+.header,
+.footer {flex-grow: 0}
+.main {flex-grow: 1;}

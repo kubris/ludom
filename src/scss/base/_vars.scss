@@ -1,0 +1,43 @@
+:root {
+	--container-width: 1230px;
+	--container-padding: 15px;
+
+	--text-color: #fff;
+	--text-muted: #8d8d8d;
+	--text-light: #ffffff;
+	--accent: #281500;
+	--page-bg: #77644d;
+
+	--font-main: 'Jura', sans-serif;
+
+}
+
+@mixin retina-bg($image) {
+	@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+		background-image: $image;
+	}
+}
+
+@mixin mw1400(){
+	@media (max-width: 1400px) {
+		@content;
+	}
+}
+
+@mixin mw992(){
+	@media (max-width: 992px) {
+		@content;
+	}
+}
+
+@mixin mw768(){
+	@media (max-width: 768px) {
+		@content;
+	}
+}
+
+@mixin mw575(){
+	@media (max-width: 575px) {
+		@content;
+	}
+}
