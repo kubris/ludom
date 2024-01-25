@@ -1,6 +1,6 @@
 :root {
-	--container-width: 1640px;
-	--container-padding: 20px;
+	--container-width: 1700px;
+	--container-padding: 50px;
 
 	--dark: #101113;
 	--white: #ffffff;
@@ -10,25 +10,13 @@
 	--gray200: #EDF0F4;
 	--gray400: #CBD3DA;
 	--gray600: #6C757D;
+	--border400: #CBD3DA;
+	--border600: #6C757D;
 
 	--font-main: "Manrope", sans-serif;
 }
-
-
-@mixin mw1440(){
-	@media (max-width: 1440px) {
-		@content;
-	}
-}
-
-@mixin mw1024(){
-	@media (max-width: 1024px) {
-		@content;
-	}
-}
-
-@mixin mw768(){
-	@media (max-width: 767px) {
-		@content;
+@media (max-width: 768px) {
+	:root {
+		--container-padding: 20px;
 	}
 }

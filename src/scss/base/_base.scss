@@ -18,3 +18,10 @@ body {
 
 	background-color: var(--white);
 }
+
+section.offset {
+	margin-bottom: 200px;
+	@include mw1440 {margin-bottom: 180px}
+	@include mw1024 {margin-bottom: 120px}
+	@include mw768 {margin-bottom: 100px}
+}

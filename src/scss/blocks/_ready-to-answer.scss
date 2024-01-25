@@ -1,0 +1,84 @@
+// --ready-to-answer
+.ready-to-answer {
+	&__wrapper {
+		display: flex;
+		justify-content: space-between;
+		column-gap: 30px;
+		@include mw1024 {
+			flex-direction: column;
+			row-gap: 40px;
+		}
+		@include mw768 {
+			row-gap: 20px;
+		}
+	}
+
+	&__content {
+		max-width: 435px;
+		width: 100%;
+		h2 {
+			margin-bottom: 40px;
+			max-width: 435px;
+			font-size: 36px;
+			font-weight: 600;
+			line-height: 130%;
+			text-transform: uppercase;
+			@include mw1024 {
+				margin-bottom: 0;
+			}
+			@include mw768 {
+				font-size: 18px;
+			}
+		}
+	}
+
+	&__contact {
+		max-width: 920px;
+		width: 100%;
+	}
+	button.mobile-show {
+		margin-top: 10px;
+	}
+}
+
+.table-contact {
+	&__item {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		column-gap: 15px;
+
+		padding: 20px 0;
+
+		font-size: 20px;
+		font-style: normal;
+		font-weight: 500;
+		line-height: 130%;
+		border-bottom: 1px solid var(--border400);
+
+		@include mw768 {
+			font-size: 16px;
+		}
+		&:first-child {
+			border-top: 1px solid var(--border400);
+		}
+
+		span {
+			min-width: 260px;
+			width: 260px;
+			@include mw768 {
+				min-width: 145px;
+				width: 145px;
+			}
+		}
+
+		a {
+			max-width: 377px;
+			width: 100%;
+			@include mw1024 {
+				max-width: unset;
+				width: auto;
+			}
+		}
+	}
+}

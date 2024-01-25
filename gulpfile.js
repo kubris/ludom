@@ -9,7 +9,9 @@ require('./gulp/wp.js');
 // developmen: gulp
 gulp.task('default', 
 	gulp.series('clean:dev', 
-	gulp.parallel('html:dev', 'sass:dev', 'images:dev', 'fonts:dev', 'files:dev', 'js:dev'),
+	gulp.parallel('html:dev', 'sass:dev', 'images:dev', 
+	//'fonts:dev', 
+	'uploads:dev', 'js:dev'),
 	gulp.parallel('server:dev', 'watch:dev')
 ));
 

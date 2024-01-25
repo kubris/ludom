@@ -1,67 +1,40 @@
-.mobile-nav-btn {
-	--time: 0.2s;
-	--width: 40px;
-	--height: 30px;
-	--line-height: 4px;
-	--spacing: 6px;
-	--bg-color: var(--text-color);
-	--radius: 4px;
-
-	height: calc(var(--line-height) * 3 + var(--spacing) * 2);
-	width: var(--width);
+.navbar-toggler {
+	height: 20px;
+	width: 30px;
 
 	display: flex;
 	justify-content: center;
 	align-items: center;
-}
 
-.nav-icon {
-	position: relative;
-	width: var(--width);
-	height: var(--line-height);
-	background-color: var(--bg-color);
-	border-radius: var(--radius);
-	transition: background-color 0.2s linear;
-
-	&::before,
-	&::after {
-		content: '';
+	&-icon {
+		position: relative;
 		display: block;
-		position: absolute;
-		left: 0;
-		width: var(--width);
-		height: var(--line-height);
-		background-color: var(--bg-color);
-		transition: transform var(--time) linear;
-	}
+		width: 30px;
+		height: 2px;
+		background-color: var(--dark);
+		border-radius: 2px;
+		transition: background-color 0.2s linear;
 
-	&::before {
-		top: calc(var(--line-height) + var(--spacing));
-	}
-	&::after {
-		bottom: calc(var(--line-height) + var(--spacing));
-	}
+		&::before,
+		&::after {
+			content: "";
+			display: block;
+			position: absolute;
+			left: 0;
+			width: 30px;
+			height: 2px;
+			background-color: var(--dark);
+			transition: transform 0.2s linear;
+		}
 
-	&.nav-icon--active {
-		background-color: transparent;
-	}
-	
-	&.nav-icon--active::before,
-	&.nav-icon--active::after {
-		top: 0;
-	}
-	&.nav-icon--active::before {
-		transform: rotate(45deg);
-	}
-	&.nav-icon--active::after {
-		transform: rotate(-45deg);
-	}
-}
+		&::before { top: -7px }
+		&::after { bottom: -7px }
 
-// Layout
-.mobile-nav-btn {
-	//display: none;
-	z-index: 999;
-	
-	@include mw1024 {display: flex}
+		&.open { background-color: transparent }
+
+		&.open::before,
+		&.open::after { top: 0 }
+		&.open::before { transform: rotate(45deg) }
+		&.open::after { transform: rotate(-45deg) }
+	}
 }

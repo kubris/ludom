@@ -1,0 +1,89 @@
+// main-form
+.main-form {
+	&__wrapper {
+		display: flex;
+		background-color: var(--gray200);
+	}
+
+	&__img {
+		img {
+			width: 100%;
+			height: 100%;
+			display: block;
+			object-fit: cover;
+		}
+		@include mw1024 {display: none}
+	}
+
+	&__form {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		padding: 50px;		
+		color: var(--dark);
+		@include mw768 {
+			padding: 30px 20px;
+			width: 100%;
+			gap: 15px;
+		}
+
+		h2 {
+			font-size: 36px;
+			font-weight: 600;
+			line-height: 130%;
+			text-transform: uppercase;
+			@include mw768 {font-size: 18px}
+
+			& + p {
+				font-size: 18px;
+				font-weight: 500;
+				line-height: 140%;
+				@include mw768 {font-size: 16px}
+			}
+		}
+	}
+}
+
+.form-ask {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	@include mw768 {gap: 15px}
+
+	input[name="userName"],
+	input[name="userPhone"] {
+		padding: 21px 20px 22px;
+		width: 100%;
+		height: 65px;
+
+		color: var(--border600);
+		font-size: 16px;
+		font-weight: 500;
+		line-height: 130%;
+
+		border: 1px solid var(--border600);
+		background-color: var(--white);
+	}
+
+	textarea[name="userMessage"] {
+		padding: 23px 20px;
+		width: 100%;
+		height: 120px;
+		background-color: var(--white);
+		border: 1px solid var(--border600);
+		resize: none;
+	}
+	&__accept {
+		display: flex;
+		align-items: baseline;
+		gap: 10px;
+		font-size: 14px;
+
+		input[type="checkbox"] {
+		}
+	}
+	button[type="submit"] {
+		align-self: start;
+		@include mw768 {margin-top: 15px}
+	}
+}

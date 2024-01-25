@@ -19,6 +19,10 @@
 	overflow: hidden !important;
 }
 
+.accent-color {
+	color: var(--accent);
+}
+
 .accent-hover {
 	transition: color .2s ease-in-out;
 	&:hover {
@@ -26,7 +30,76 @@
 	}
 }
 
+.underline {
+	position: relative;
+	transition: color .2s;
+	&::after {
+		content: '';
+		display: block;
+		height: 1px;
+		width: 100%;
+		position: absolute;
+		left: 0;
+		bottom: -5px;
+		background-color: var(--accent);
+		opacity: 0;
+		transition: opacity 0.2s;
+	}
+	&:hover { color: var(--accent) }
+	&:hover::after {opacity: 1}
+}
+
+.underline-white {
+	position: relative;
+	&::after {
+		content: '';
+		display: block;
+		height: 1px;
+		width: 100%;
+		position: absolute;
+		left: 0;
+		bottom: -5px;
+		background-color: var(--white);
+		opacity: 0;
+		transition: opacity 0.2s;
+	}
+	&:hover::after {opacity: 1}
+}
+
 .shadow { box-shadow: 0px 8px 20px 0px rgba(86, 86, 86, 0.15) }
 
-.border-400 { border: 1px solid #CBD3DA }
-.border-600 { border: 1px solid #6C757D }
+.transition {
+	transition: color .2s ease-in-out,background-color .2s ease-in-out,border-color .2s ease-in-out,box-shadow .2s ease-in-out;
+}
+
+.fx-aic {
+	display: flex;
+	align-items: center;
+}
+.fx-aic-jcc {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.tablet-hide {
+	@include mw1024 {display: none !important;}
+}
+.tablet-show {
+	display: none !important;
+	@include mw1024 {display: flex !important;}
+}
+.tablet-show-center {
+	display: none !important;
+	@include mw1024 {
+		display: flex !important;
+		align-self: center;
+	}
+}
+.mobile-hide {
+	@include mw768 {display: none !important;}
+}
+.mobile-show {
+	display: none !important;
+	@include mw768 {display: flex !important;}
+}

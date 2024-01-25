@@ -1,0 +1,20 @@
+//@include mw1440 {}
+@mixin mw1440(){
+	@media (max-width: 1440px) {
+		@content;
+	}
+}
+
+//@include mw1024 {}
+@mixin mw1024(){
+	@media (max-width: 1024px) {
+		@content;
+	}
+}
+
+// @include mw768 {}
+@mixin mw768(){
+	@media (max-width: 767px) {
+		@content;
+	}
+}

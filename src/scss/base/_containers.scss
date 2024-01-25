@@ -6,15 +6,21 @@
 }
 
 .container-right {
-	// overflow-x: hidden;
-	padding-left: calc(
-		(100% - var(--container-width)) /  2 + var(--container-padding)
-	);
+	//overflow-x: hidden;
+	margin-left: auto;
+	margin-left: calc((100vw - var(--container-width)) / 2 + var(--container-padding));
+	max-width: 1740px;
+}
+@media (max-width: 1540px) {
+	.container-right {
+		margin: 0 auto;
+		padding: 0 var(--container-padding);
+		max-width: var(--container-width);
+		width: 100%;
+	}
 }
 
 .container-left {
 	// overflow-x: hidden;
-	padding-right: calc(
-		(100% - var(--container-width)) /  2 + var(--container-padding)
-	);
+	padding-right: calc((100vw - var(--container-width)) / 2 + var(--container-padding));
 }

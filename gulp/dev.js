@@ -95,13 +95,13 @@ gulp.task('fonts:dev', function(){
 });
 // === end FONTS ===
 
-// === FILES ===
-gulp.task('files:dev', function(){
-	return gulp.src('./src/files/**/*')
-		.pipe(changed('./build/files/'))
-		.pipe(gulp.dest('./build/files/'))
+// === UPLOADS ===
+gulp.task('uploads:dev', function(){
+	return gulp.src('./src/uploads/**/*')
+		.pipe(changed('./build/uploads/'))
+		.pipe(gulp.dest('./build/uploads/'))
 });
-// === end FILES ===
+// === end UPLOADS ===
 
 // === JS ===
 gulp.task('js:dev', function(){
@@ -129,7 +129,7 @@ gulp.task('watch:dev', function(){
 	gulp.watch('./src/**/*.html', gulp.parallel('html:dev'));
 	gulp.watch('./src/images/**/*', gulp.parallel('images:dev'));
 	//gulp.watch('./src/fonts/**/*', gulp.parallel('fonts:dev'));
-	//gulp.watch('./src/files/**/*', gulp.parallel('files:dev'));
+	gulp.watch('./src/uploads/**/*', gulp.parallel('uploads:dev'));
 	gulp.watch('./src/js/**/*.js', gulp.parallel('js:dev'));
 });
 // === end WATCH ===
