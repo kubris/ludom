@@ -5,6 +5,10 @@
 		a {
 			display: inline-block;
 			position: relative;
+			margin-bottom: 10px;
+			font-size: 16px;
+			font-weight: 500;
+			line-height: 130%;
 			&::before {
 				content: "";
 				position: absolute;
@@ -17,12 +21,12 @@
 				opacity: 0;
 				transition: opacity 0.2s ease-in-out;
 			}
-		}
-		&:hover {
-			color: var(--accent);
-		}
-		&:hover a::before {
-			opacity: 1;
+			&:hover {
+				color: var(--accent);
+			}
+			&:hover::before {
+				opacity: 1;
+			}
 		}
 
 		&.active {
@@ -32,8 +36,27 @@
 }
 
 .dropdown {
+	position: relative;
 	&-menu {
 		display: none;
+		position: absolute;
+		z-index: 3;
+		top: 55px;
+		left: -40px;
+
+		grid-template-columns: auto 1fr;
+		column-gap: 60px;
+		width: 720px;
+		padding: 20px 40px 40px;
+		background-color: var(--white);
+	}
+
+	&-toggle {
+		&.slide + .dropdown-menu {
+			display: grid;
+			@include mw1024 {
+			}
+		}
 	}
 }
 
@@ -51,10 +74,110 @@
 		}
 	}
 
+	&-menu {
+		&__toggle {
+			.btn { display: none}
+			&.show {
+				position: fixed;
+				left: 0;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				align-items: center;
+				row-gap: 40px;
+				padding-bottom: 40px;
+				background-color: var(--gray200);
+				z-index: 5;
+				overflow-y: auto;
+
+				.navbar {
+					&-nav {
+						display: flex;
+						flex-direction: column;
+						align-items: stretch;
+						max-width: 360px;
+						margin-top: 80px;
+						padding: 0 20px 20px;
+						width: 100%;
+					}
+				}
+
+				.nav-item {
+					border-bottom: 1px solid var(--border400);
+				}
+
+				.nav-link {
+					margin-bottom: 0;
+					font-size: 18px;
+					&:hover::before {
+						content: none;
+					}
+				}
+
+				.dropdown-menu {
+					padding: 15px 0;
+					grid-template-columns: 1fr;
+					grid-template-columns: 1fr;
+					position: static;
+					width: 100%;
+					background-color: unset;
+				}
+
+				.menu__btns-block {
+					display: flex;
+					flex-direction: column;
+					gap: 20px;
+					width: 100%;
+					max-width: 380px;
+				}
+
+				.btn.btn--black-transp {
+					display: block;
+				}
+
+				@include mw768 {
+					.btn.btn--blue {
+						display: block;
+					}
+				}
+			}
+		}
+	}
+
 	&-nav {
 		display: flex;
 		align-items: center;
 		gap: 15px;
+
+		.nav-item {
+			position: relative;
+
+			@include mw1200 {
+				padding-bottom: 15px;
+
+				&.dropdown {
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					position: relative;
+
+					&::after {
+						content: "";
+						position: absolute;
+						right: 0;
+						top: 0;
+						width: 20px;
+						height: 20px;
+						background: url("../images/svg/chevron-up.svg") center no-repeat;
+						background-size: contain;
+						z-index: -1;
+					}
+				}
+			}
+		}
 	}
 
 	&-buttons {
@@ -65,16 +188,17 @@
 
 	&-toggler {
 		display: none;
+		position: relative;
+		z-index: 5;
 	}
 }
 
 @media (max-width: 1200px) {
 	.navbar {
-		
 		&-nav {
 			display: none;
 		}
-		
+
 		&-buttons {
 			.btn--black-transp {
 				display: none;
@@ -88,7 +212,7 @@
 }
 
 @media (max-width: 767px) {
-	.navbar {		
+	.navbar {
 		&-buttons {
 			.btn--blue {
 				display: none;

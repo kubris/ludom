@@ -1,10 +1,12 @@
 // === BURGER menu button click
 if (document.querySelector(".navbar-toggler")) {
 	const burgerBtn = document.querySelector(".navbar-toggler");
+	const mobileNav = document.querySelector(".navbar-menu__toggle");
 
 	burgerBtn.addEventListener("click", (event) => {
 		document.querySelector(".navbar-toggler > span").classList.toggle("open");
-		document.querySelector(".navbar-nav").classList.toggle("show");
+		mobileNav.classList.toggle("show");
+		document.body.classList.toggle('no-scroll');
 	});
 }
 // === end BURGER menu button click
@@ -79,13 +81,58 @@ if (document.getElementById("categoriesList")) {
 // === end SCROLL DRUGGING
 
 // === FOOTER LIST
-if(document.querySelector('.js-footer-list')) {
-	const footerBtns = document.querySelectorAll('.js-footer-list');
+if (document.querySelector(".js-footer-list")) {
+	const footerBtns = document.querySelectorAll(".js-footer-list");
 	footerBtns.forEach((btn) => {
-
-		btn.addEventListener('click', (event) => {
-			event.currentTarget.classList.toggle('active');
+		btn.addEventListener("click", (event) => {
+			event.currentTarget.classList.toggle("active");
 		});
 	});
 }
 // === end FOOTER LIST
+
+// === MENU DROPDOWN
+if (document.querySelector(".dropdown-toggle")) {
+	const menuDropItems = document.querySelectorAll(".dropdown-toggle");
+	const menuLinks = document.querySelectorAll(".nav-link");
+	const mainSect = document.querySelector(".main");
+	const mobileBg = document.querySelector(".navbar-menu__toggle");
+	if (window.innerWidth > 1200) {
+		menuLinks.forEach((item) => {
+			item.addEventListener("mouseover", (event) => {
+				if (item.classList.contains("dropdown-toggle")) {
+					delAllOpened(menuDropItems);
+					item.classList.add("slide");
+					mainSect.classList.add("bg");
+				} else if (mainSect.classList.contains("bg")) {
+					mainSect.classList.remove("bg");
+					delAllOpened(menuDropItems);
+				}
+			});
+		});
+
+		document.body.addEventListener("click", () => {
+			delAllOpened(menuDropItems);
+			mainSect.classList.remove("bg");
+		});
+
+	} else {
+		menuLinks.forEach((item) => {
+			item.addEventListener("click", (event) => {
+				event.stopPropagation;
+				if (item.classList.contains("dropdown-toggle")) {
+					item.classList.toggle("slide");
+				} 
+			});
+		});
+	}
+}
+
+function delAllOpened(el) {
+	el.forEach((item) => {
+		if (item.classList.contains("slide")) {
+			item.classList.remove("slide");
+		}
+	});
+}
+// === end MENU DROPDOWN

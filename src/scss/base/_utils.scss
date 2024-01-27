@@ -24,7 +24,7 @@
 }
 
 .accent-hover {
-	transition: color .2s ease-in-out;
+	transition: color 0.2s ease-in-out;
 	&:hover {
 		color: var(--accent);
 	}
@@ -32,9 +32,9 @@
 
 .underline {
 	position: relative;
-	transition: color .2s;
+	transition: color 0.2s;
 	&::after {
-		content: '';
+		content: "";
 		display: block;
 		height: 1px;
 		width: 100%;
@@ -45,14 +45,18 @@
 		opacity: 0;
 		transition: opacity 0.2s;
 	}
-	&:hover { color: var(--accent) }
-	&:hover::after {opacity: 1}
+	&:hover {
+		color: var(--accent);
+	}
+	&:hover::after {
+		opacity: 1;
+	}
 }
 
 .underline-white {
 	position: relative;
 	&::after {
-		content: '';
+		content: "";
 		display: block;
 		height: 1px;
 		width: 100%;
@@ -63,13 +67,17 @@
 		opacity: 0;
 		transition: opacity 0.2s;
 	}
-	&:hover::after {opacity: 1}
+	&:hover::after {
+		opacity: 1;
+	}
 }
 
-.shadow { box-shadow: 0px 8px 20px 0px rgba(86, 86, 86, 0.15) }
+.shadow {
+	box-shadow: 0px 8px 20px 0px rgba(86, 86, 86, 0.15);
+}
 
 .transition {
-	transition: color .2s ease-in-out,background-color .2s ease-in-out,border-color .2s ease-in-out,box-shadow .2s ease-in-out;
+	transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
 .fx-aic {
@@ -83,11 +91,15 @@
 }
 
 .tablet-hide {
-	@include mw1024 {display: none !important;}
+	@include mw1024 {
+		display: none !important;
+	}
 }
 .tablet-show {
 	display: none !important;
-	@include mw1024 {display: flex !important;}
+	@include mw1024 {
+		display: flex !important;
+	}
 }
 .tablet-show-center {
 	display: none !important;
@@ -97,9 +109,43 @@
 	}
 }
 .mobile-hide {
-	@include mw768 {display: none !important;}
+	@include mw768 {
+		display: none !important;
+	}
 }
 .mobile-show {
 	display: none !important;
-	@include mw768 {display: flex !important;}
+	@include mw768 {
+		display: flex !important;
+	}
+}
+
+.bg {
+	&::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 100vh;
+		z-index: 1;
+	}
+}
+
+//animation: show 0.3s linear;
+@keyframes show {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+@keyframes hide {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
 }

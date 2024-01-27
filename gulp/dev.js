@@ -1,6 +1,7 @@
 const gulp 			= require('gulp'),
 	  fileInclude	= require('gulp-file-include'),
 	  sass			= require('gulp-sass')(require('sass')),
+	  autoprefixer = require('gulp-autoprefixer'),
 	  sassGlob			= require('gulp-sass-glob'),
 	  server		= require('gulp-server-livereload'),
 	  clean			= require('gulp-clean'),
@@ -9,6 +10,7 @@ const gulp 			= require('gulp'),
 	  plumber		= require('gulp-plumber'),
 	  notify		= require('gulp-notify'),
 	  imagemin		= require('gulp-imagemin'),
+	  groupMedia = require("gulp-group-css-media-queries"),
 	  changed		= require('gulp-changed');
 
 //const webpack		= require('webpack-stream');
@@ -73,6 +75,8 @@ gulp.task('sass:dev', function(){
 		.pipe(sassGlob())
 		.pipe(sourceMaps.init())
 		.pipe(sass())
+		.pipe(groupMedia())
+		//.pipe(autoprefixer(['last 15 versions', '> 1%'], { cascade: true }))
 		.pipe(sourceMaps.write('.'))
 		.pipe(gulp.dest('./build/css/'))
 });

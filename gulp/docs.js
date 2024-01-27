@@ -81,7 +81,7 @@ gulp.task("sass:docs", function () {
 		.pipe(sass())
 		.pipe(webpCss())
 		.pipe(groupMedia())
-		.pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))		
+		.pipe(autoprefixer(['last 15 versions', '> 1%'], { cascade: true }))		
 		.pipe(csso())
 		.pipe(gulp.dest("./docs/css/"));
 });

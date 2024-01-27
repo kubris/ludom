@@ -21,13 +21,15 @@
 	}
 
 	&--big {
-		padding: 15px 50px;
+		padding: 5px 50px;
+		height: 50px;
 		@include mw768 {
 			padding: 11px 26px;
 		}
 	}
 	&--mid {
-		padding: 11px 26px;
+		height: 43px;
+		padding: 5px 26px;
 	}
 
 	&--blue {
