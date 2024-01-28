@@ -1,0 +1,43 @@
+// -- product-page-benefits
+.product-page-benefits {
+	&-promo.promo-block {
+		.promo-item {
+			gap: 30px;
+			@include mw1024 {
+				display: grid;
+				grid-template-columns: 2fr 1fr;
+				gap: 20px;
+			}
+
+			span:first-child {
+				min-width: unset;
+				max-width: 650px;
+				width: 100%;
+	
+				font-size: inherit;
+				font-weight: inherit;
+				line-height: inherit;
+				@include mw1440 {
+					max-width: 433px;
+				}
+				@include mw1024 {
+				}
+				@include mw768 {
+				}
+			}
+
+			span:nth-child(2) {
+				max-width: 833px;
+				width: 100%;
+				@include mw1024 { grid-column: 1 / 2 }
+			}
+
+			a {
+				@include mw1024 {
+					grid-row: 1 / 2;
+					grid-column: 2 / 3;
+				}
+			}
+		}
+	}
+}

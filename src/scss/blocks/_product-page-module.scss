@@ -1,0 +1,85 @@
+.benefits {
+	&-grid {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		grid-auto-rows: 440px;
+		grid-gap: 40px 30px;
+
+		@include mw1024 {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@include mw768 { 
+			grid-auto-rows: 240px;
+			grid-gap: 16px;
+		}
+	}
+
+	&-item {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+		padding-bottom: 10px;
+		color: var(--dark);
+		//height: 440px;
+
+		&:first-child {
+			position: relative;
+			grid-column: 1 / 3;
+			a {
+				text-align: center;
+			}
+
+			.benefits-img img {
+				width: auto;
+			}
+
+			h3 {
+				font-size: 26px;
+				font-weight: 500;
+				line-height: 120%;
+				@include mw768 {
+					font-size: 16px;
+				}
+			}
+
+			&::after {
+				content: "";
+				position: absolute;
+				top: 30px;
+				right: 30px;
+				width: 40px;
+				height: 40px;
+				background: url(../images/svg/arrow-diag.svg) center no-repeat;
+				background-size: contain;
+				pointer-events: none;
+			}
+		}
+
+		h3 {
+			font-size: 20px;
+			font-weight: 500;
+			line-height: 130%;
+		}
+		span {
+			color: var(--gray600);
+			font-size: 18px;
+			font-weight: 500;
+			line-height: 140%;
+		}
+
+		@include mw768 {
+			padding-bottom: 0;
+			gap: 5px;
+		}
+	}
+
+	&-img {
+		img {
+			height: 358px;
+			width: 100%;
+			object-fit: cover;
+
+			@include mw768 { height: 168px }
+		}
+	}
+}

@@ -1,0 +1,37 @@
+// -- product-page-hero
+.product-page-hero {
+	padding-top: 30px;
+	background-image: url(../uploads/hero/product-page-hero.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	@include mw768 {
+		padding-top: 20px;
+	}
+
+	.breadcrumbs {
+		margin-bottom: 120px;
+		@include mw1440 {
+			margin-bottom: 90px;
+		}
+		@include mw768 {
+			margin-bottom: 100px;
+		}
+	}
+
+	.title-block {
+		padding-bottom: 410px;
+		max-width: 570px;
+		color: var(--white);
+		@include mw1440 {
+			padding-bottom: 340px;
+		}
+		@include mw768 {
+			padding-bottom: 440px;
+		}
+		@include mw768 {
+			max-width: 380px;
+			padding-bottom: 180px;
+		}
+	}
+}

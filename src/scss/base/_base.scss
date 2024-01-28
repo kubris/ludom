@@ -25,3 +25,8 @@ section.offset {
 	@include mw1024 {margin-bottom: 120px}
 	@include mw768 {margin-bottom: 100px}
 }
+
+.title-block.middle-offset {
+	margin-bottom: 30px;
+	@include mw768 {margin-bottom: 20px}
+}
