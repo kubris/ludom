@@ -1,0 +1,142 @@
+// --catalog-product-page
+
+.catalog-product-page {
+}
+
+.our-clients__slider {
+	&.product-page {
+		.swiper-slide {
+			padding: 0;
+			border: unset;
+			& > img {
+				width: 100%;
+			}
+		}
+
+		.same-clients {
+			.swiper-slide {
+				flex-direction: column;
+				gap: 10px;
+				align-items: flex-start;
+				@include mw768 {
+					gap: 5px;
+				}
+				& > img {
+					height: 358px;
+					object-fit: cover;
+					@include mw768 {
+						height: 168px;
+					}
+				}
+				& > span {
+					@include mw768 {
+						font-size: 16px;
+					}
+				}
+			}
+		}
+	}
+}
+
+.info {
+	&-grid {
+		display: grid;
+		grid-gap: 30px 40px;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+		margin-bottom: 60px;
+		@include mw1024 {
+			grid-gap: 40px 20px;
+		}
+		@include mw768 {
+			grid-gap: 30px 15px;
+		}
+	}
+	&-cell {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+		font-size: 18px;
+		font-weight: 500;
+		line-height: 140%;
+		@include mw768 {
+			font-size: 16px;
+		}
+
+		&__label {
+			color: var(--gray600);
+		}
+		&__value {
+			color: var(--dark);
+		}
+	}
+}
+
+.btns-block__wide {
+	display: flex;
+	width: 100%;
+	gap: 30px;
+	& > button {
+		width: 100%;
+	}
+	@include mw768 {
+		flex-direction: column;
+		gap: 20px;
+	}
+}
+
+.catalog-product-page__hero {
+	&-wrapper {
+		display: grid;
+		grid-gap: 30px;
+		grid-template-columns: repeat(2, 1fr);
+
+		@include mw1024 {
+			grid-template-columns: 1fr;
+			grid-template-rows: repeat(2, auto);
+		}
+		@include mw768 {
+			grid-gap: 15px;
+		}
+	}
+
+	.breadcrumbs {
+		margin-bottom: -35px;
+		padding-top: 30px;
+		@include mw1024 {
+			margin: 30px 0;
+			padding: 0;
+		}
+	}
+
+	&-content {
+		@include mw1024 {
+			grid-row: 2 / 3;
+		}
+
+		.title-block {
+			margin-bottom: 0;
+			h1 {
+				margin: 60px 0 20px;
+				@include mw1024 {
+					margin: 10px 0 20px;
+				}
+				@include mw768 {
+					margin: 0 0 10px;
+				}
+			}
+			p {
+				@include mw768 {
+					font-size: 14px;
+				}
+			}
+		}
+	}
+
+	&-img {
+		img {
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+}

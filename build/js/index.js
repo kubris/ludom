@@ -15,8 +15,59 @@ if (document.querySelector(".navbar-toggler")) {
 if (document.querySelector(".slider-clients")) {
 	const sliderLazy = new Swiper(".slider-clients", {
 		loop: true,
-		slidesPerView: 4,
+		slidesPerView: 2.2,
 		spaceBetween: 0,
+
+		navigation: {
+			nextEl: ".slider-next",
+			prevEl: ".slider-prev",
+		},
+
+		breakpoints: {
+			300: {
+				slidesPerView: 2.2,
+			},
+			1024: {
+				slidesPerView: 4,
+			},
+		},
+	});
+}
+// === end OUR-CLIENTS
+
+// === SLIDER SAME-CLIENTS
+if (document.querySelector(".same-clients")) {
+	const sliderLazy = new Swiper(".same-clients", {
+		loop: true,
+		slidesPerView: 2.2,
+		spaceBetween: 10,
+
+		navigation: {
+			nextEl: ".slider-next",
+			prevEl: ".slider-prev",
+		},
+
+		breakpoints: {
+			300: {
+				slidesPerView: 2.2,
+			},
+			769: {
+				spaceBetween: 20,
+			},
+			1024: {
+				slidesPerView: 4,
+			},
+		},
+	});
+}
+// === end SAME-CLIENTS
+
+// === SLIDER DOP-INFO
+if (document.querySelector(".dop-info")) {
+	const sliderLazy = new Swiper(".dop-info", {
+		loop: true,
+		slidesPerView: 4,
+		spaceBetween: 20,
 
 		navigation: {
 			nextEl: ".slider-next",
@@ -36,7 +87,7 @@ if (document.querySelector(".slider-clients")) {
 		},
 	});
 }
-// === end OUR-CLIENTS
+// === end DOP-INFO
 
 // === SCROLL DRUGGING
 if (document.getElementById("categoriesList")) {

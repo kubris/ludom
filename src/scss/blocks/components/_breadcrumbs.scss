@@ -1,8 +1,10 @@
 .breadcrumbs {
+
 	ul {
 		display: flex;
 		align-items: center;
-		gap: 10px;
+		gap: 0 10px;
+		flex-wrap: wrap;
 
 		li {
 			display: flex;
@@ -15,6 +17,7 @@
 
 			&:last-child {
 				a {
+					white-space: nowrap;
 					color: var(--accent);
 					pointer-events: none;
 				}
