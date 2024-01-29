@@ -1,0 +1,55 @@
+// --project-pahe-hero
+.project-page {
+	&-interest {
+		.slide-title {
+			font-size: 26px;
+			font-weight: 500;
+			line-height: 120%;
+			@include mw768 {
+				font-size: 16px;
+			}
+		}
+		.card-more > span {
+			i {
+				font-style: normal;
+			}
+			@include mw768 {
+				font-size: 14px;
+				i {
+					display: none;
+				}
+			}
+		}
+	}
+
+	&__hero {
+		.breadcrumbs {
+			margin-top: 30px;
+		}
+
+		@include mw1024 {
+			.catalog-product-page__hero-img {
+				margin-top: 30px;
+				grid-row: 1 / 2;
+			}
+		}
+	}
+
+	&__content {
+		.title-block {
+			margin-bottom: 60px;
+			h1 {
+				margin-top: 50px;
+				@include mw1024 {
+					margin-top: 10px;
+				}
+			}
+			p {
+				margin-bottom: 0;
+			}
+		}
+		.info-grid {
+			margin-bottom: 0;
+		}
+	}
+}

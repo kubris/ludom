@@ -1887,6 +1887,36 @@ legend {
 .our-projects > .product-catalog__filter-toggle img {
   filter: brightness(20);
 }
+.our-projects-head {
+  margin-bottom: 60px;
+}
+@media (max-width: 767px) {
+  .our-projects-head {
+    margin-bottom: 40px;
+  }
+}
+.our-projects-head .breadcrumbs {
+  margin-top: 30px;
+}
+.our-projects-head .title-block {
+  margin: 0;
+}
+.our-projects-head .title-block h1 {
+  margin-top: 60px;
+}
+@media (max-width: 767px) {
+  .our-projects-head .title-block h1 {
+    margin-top: 40px;
+  }
+}
+.our-projects-head .title-block p {
+  margin: 0;
+}
+@media (max-width: 767px) {
+  .our-projects-grid.product-grid {
+    margin-top: 20px;
+  }
+}
 
 .card-more {
   display: flex;
@@ -2094,21 +2124,21 @@ legend {
 .product-catalog__content {
   flex-grow: 1;
 }
-.product-catalog .pagination {
+.product-catalog.pagination {
   margin-bottom: 200px;
 }
 @media (max-width: 1440px) {
-  .product-catalog .pagination {
+  .product-catalog.pagination {
     margin-bottom: 180px;
   }
 }
 @media (max-width: 1024px) {
-  .product-catalog .pagination {
+  .product-catalog.pagination {
     margin-bottom: 120px;
   }
 }
 @media (max-width: 767px) {
-  .product-catalog .pagination {
+  .product-catalog.pagination {
     margin-bottom: 100px;
   }
 }
@@ -2667,6 +2697,54 @@ legend {
   .howork__item span {
     font-size: 16px;
   }
+}
+
+.project-page-interest .slide-title {
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 120%;
+}
+@media (max-width: 767px) {
+  .project-page-interest .slide-title {
+    font-size: 16px;
+  }
+}
+.project-page-interest .card-more > span i {
+  font-style: normal;
+}
+@media (max-width: 767px) {
+  .project-page-interest .card-more > span {
+    font-size: 14px;
+  }
+  .project-page-interest .card-more > span i {
+    display: none;
+  }
+}
+.project-page__hero .breadcrumbs {
+  margin-top: 30px;
+}
+@media (max-width: 1024px) {
+  .project-page__hero .catalog-product-page__hero-img {
+    margin-top: 30px;
+    grid-row: 1/2;
+  }
+}
+.project-page__content .title-block {
+  margin-bottom: 60px;
+}
+.project-page__content .title-block h1 {
+  margin-top: 50px;
+}
+@media (max-width: 1024px) {
+  .project-page__content .title-block h1 {
+    margin-top: 10px;
+  }
+}
+.project-page__content .title-block p {
+  margin-bottom: 0;
+}
+.project-page__content .info-grid {
+  margin-bottom: 0;
 }
 
 .ready-to-answer__wrapper {
