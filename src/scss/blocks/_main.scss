@@ -1,22 +1,5 @@
 .main {
 	flex-grow: 1;
-	position: relative;
-
-	&::after {
-		content: "";
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		height: 100vh;
-		z-index: -1;
-		background-color: transparent;
-		transition: background-color 0.3s;
-	}
-	&.bg::after {
-		background-color: rgba(34, 34, 34, 0.4);
-		z-index: 1;
-	}
 }
 
 // -- title-block

@@ -128,7 +128,7 @@
 
 .product-grid {
 	display: grid;
-	grid-gap: 30px 40px;
+	grid-gap: 40px 30px;
 	grid-template-columns: repeat(3, 1fr);
 	@include mw1440 {
 		grid-gap: 20px 40px;

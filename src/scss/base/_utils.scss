@@ -121,13 +121,16 @@
 }
 
 .bg {
+	position: relative;
 	&::after {
 		content: "";
 		position: absolute;
 		top: 0;
 		left: 0;
 		right: 0;
-		height: 100vh;
+		height: 100%;
+		background-color: rgba(34, 34, 34, 0.4);
+		transition: background-color 0.3s;
 		z-index: 1;
 	}
 }
