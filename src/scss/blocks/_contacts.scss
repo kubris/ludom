@@ -1,0 +1,89 @@
+.socials {
+	display: inline-flex;
+	gap: 20px;
+	& > a img { transition: filter 0.3s }
+	& > a:hover img { filter: contrast(20) }
+}
+
+// --contacts
+.contacts {
+	.breadcrumbs {
+		margin-top: 30px;
+		@include mw768 {
+			margin-top: 20px;
+		}
+	}
+
+	&-address {
+		display: flex;
+		gap: 30px;
+		@include mw1024 {
+			margin-top: 60px;
+			flex-direction: column;
+			gap: 60px;
+		}
+		@include mw768 {
+			margin-top: 40px;
+			flex-direction: column;
+			gap: 60px;
+		}
+
+		&__item {
+			width: 100%;
+		}
+
+		&__block {
+			margin-top: 80px;
+			margin-left: 136px;
+			display: flex;
+			flex-direction: column;
+			gap: 40px;
+			@include mw1440 {
+				margin-top: 60px;
+				margin-left: 113px;				
+			}
+			@include mw1024 {
+				margin-top: 0;
+				margin-left: 0;
+			}
+			@include mw768 { gap: 20px }
+
+			h2 {
+				color: var(--dark);
+				font-size: 36px;
+				font-weight: 600;
+				line-height: 130%;
+				text-transform: uppercase;
+
+				@include mw768 {font-size: 18px}
+			}
+		}
+
+		&__links {
+			display: flex;
+			flex-direction: column;
+			gap: 20px;
+
+			color: var(--gray600);
+			font-size: 20px;
+			font-weight: 500;
+			line-height: 130%;
+
+			@include mw768 {margin-bottom: 20px}
+		}
+	}
+
+	&-map {
+		height: 520px;
+		@include mw1024 {height: 420px}
+		@include mw768 {height: 220px}
+
+		iframe {
+			width: 100%;
+			height: 100%;
+		}
+
+		filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/></filter></svg>#grayscale");
+		-webkit-filter: grayscale(100%);
+	}
+}
