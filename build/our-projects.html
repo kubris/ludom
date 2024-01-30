@@ -13,14 +13,14 @@
 			<header class="header">
 	<div class="container">
 		<nav class="navbar">
-			<a class="navbar-brand" href="/">Лудом</a>
+			<a class="navbar-brand" href="">Лудом</a>
 			<div class="navbar-menu__toggle">
 				<ul class="navbar-nav">
 					<li class="nav-item dropdown">
-						<a href="/catalog-product.html" class="nav-link dropdown-toggle"> Продукция</a>
+						<a href="catalog-product.html" class="nav-link dropdown-toggle"> Продукция</a>
 						<div class="dropdown-menu">
 							<ul>
-								<li><a class="dropdown-item" href="/catalog-product-page.html">Киоски</a></li>
+								<li><a class="dropdown-item" href="product-page.html">Киоски</a></li>
 								<li><a class="dropdown-item" href="#">Офисные здания</a></li>
 								<li><a class="dropdown-item" href="#">Временные жилые модули</a></li>
 								<li><a class="dropdown-item" href="#">Отели</a></li>
@@ -48,10 +48,10 @@
 						</div>
 					</li>
 					<li class="nav-item dropdown">
-						<a href="/category.html" class="nav-link dropdown-toggle"> Каталог</a>
+						<a href="category.html" class="nav-link dropdown-toggle"> Каталог</a>
 						<div class="dropdown-menu">
 							<ul>
-								<li><a class="dropdown-item" href="/catalog-product-page.html">Киоски</a></li>
+								<li><a class="dropdown-item" href="catalog-product.html">Киоски</a></li>
 								<li><a class="dropdown-item" href="#">Офисные здания</a></li>
 								<li><a class="dropdown-item" href="#">Временные жилые модули</a></li>
 								<li><a class="dropdown-item" href="#">Отели</a></li>
@@ -79,13 +79,13 @@
 						</div>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="/our-projects.html">Наши проекты</a>
+						<a class="nav-link" href="our-projects.html">Наши проекты</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="/about.html">О компании</a>
+						<a class="nav-link" href="about.html">О компании</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="/contacts.html">Контакты</a>
+						<a class="nav-link" href="contacts.html">Контакты</a>
 					</li>
 				</ul>
 				<div class=" menu__btns-block">
@@ -95,7 +95,7 @@
 			</div>
 			<div class="navbar-buttons">
 				<button class="btn btn--mid btn--black-transp">Написать в чат</button>
-				<button class="btn btn--mid btn--blue">Заказать звонок</button>
+				<button class="btn btn--mid btn--blue jsOpenModal">Заказать звонок</button>
 				<button class="navbar-toggler" type="button">
 					<span class="navbar-toggler-icon"></span>
 				</button>
@@ -139,7 +139,7 @@
 				<ul class="aside-grid">
 					<li class="aside-grid__item active">
 						<span>
-							<a href="#">Все проекты</a>
+							<a href="/our-projects.html">Все проекты</a>
 							<i class="drop-link">
 								<img src="images/svg/chevron-up.svg" />
 							</i>
@@ -148,7 +148,7 @@
 
 					<li class="aside-grid__item">
 						<span>
-							<a href="#">Киоски</a>
+							<a href="/catalog-product.html">Киоски</a>
 							<i class="drop-link">
 								<img src="images/svg/chevron-up.svg" />
 							</i>
@@ -227,6 +227,7 @@
 					<span>Все проекты</span>
 					<img src="images/svg/chevron-up.svg" />
 				</div>
+
 				<ul class="aside-grid__filter-mobile">
 					<li class="aside-grid__item">
 						<span>
@@ -312,8 +313,8 @@
 
 				<div class="product-grid our-projects-grid">
 					<div class="product-grid__item">
-						<a href="#" class="product-grid__item-img">
-							<img src="uploads/our-projects/our1.jpg" alt="Модульный киоск №1" />
+						<a href="/project-page.html" class="product-grid__item-img">
+							<img src="uploads/our-projects/our1.jpg" alt="Билетная касса" />
 						</a>
 						<h3>Билетная касса</h3>
 						<a class="card-more" href="#">
@@ -322,8 +323,8 @@
 						</a>
 					</div>
 					<div class="product-grid__item">
-						<a href="#" class="product-grid__item-img">
-							<img src="uploads/our-projects/our2.jpg" alt="Модульный киоск №2" />
+						<a href="/project-page.html" class="product-grid__item-img">
+							<img src="uploads/our-projects/our2.jpg" alt="Офис продаж" />
 						</a>
 						<h3>Офис продаж</h3>
 						<a class="card-more" href="#">
@@ -332,8 +333,8 @@
 						</a>
 					</div>
 					<div class="product-grid__item">
-						<a href="#" class="product-grid__item-img">
-							<img src="uploads/our-projects/our3.jpg" alt="Модульный киоск №3" />
+						<a href="/project-page.html" class="product-grid__item-img">
+							<img src="uploads/our-projects/our3.jpg" alt="Торговый павильон" />
 						</a>
 						<h3>Торговый павильон</h3>
 						<a class="card-more" href="#">
@@ -343,7 +344,7 @@
 					</div>
 					<div class="product-grid__item">
 						<a href="#" class="product-grid__item-img">
-							<img src="uploads/our-projects/our4.jpg" alt="Модульный киоск №4" />
+							<img src="uploads/our-projects/our4.jpg" alt="Модульное кафе" />
 						</a>
 						<h3>Модульное кафе</h3>
 						<a class="card-more" href="#">
@@ -353,7 +354,7 @@
 					</div>
 					<div class="product-grid__item">
 						<a href="#" class="product-grid__item-img">
-							<img src="uploads/our-projects/our5.jpg" alt="Модульный киоск №5" />
+							<img src="uploads/our-projects/our5.jpg" alt="Модульный жилой дом" />
 						</a>
 						<h3>Модульный жилой дом</h3>
 						<a class="card-more" href="#">
@@ -363,7 +364,7 @@
 					</div>
 					<div class="product-grid__item">
 						<a href="#" class="product-grid__item-img">
-							<img src="uploads/our-projects/our6.jpg" alt="Модульный киоск №6" />
+							<img src="uploads/our-projects/our6.jpg" alt="Модульный киоск" />
 						</a>
 						<h3>Модульный киоск</h3>
 						<a class="card-more" href="#">
@@ -373,7 +374,7 @@
 					</div>
 					<div class="product-grid__item">
 						<a href="#" class="product-grid__item-img">
-							<img src="uploads/our-projects/our7.jpg" alt="Модульный киоск №7" />
+							<img src="uploads/our-projects/our7.jpg" alt="Модульный жилой дом" />
 						</a>
 						<h3>Модульный жилой дом</h3>
 						<a class="card-more" href="#">
@@ -383,7 +384,7 @@
 					</div>
 					<div class="product-grid__item">
 						<a href="#" class="product-grid__item-img">
-							<img src="uploads/our-projects/our8.jpg" alt="Модульный киоск №8" />
+							<img src="uploads/our-projects/our8.jpg" alt="Установка модуля" />
 						</a>
 						<h3>Установка модуля</h3>
 						<a class="card-more" href="#">
@@ -393,7 +394,7 @@
 					</div>
 					<div class="product-grid__item">
 						<a href="#" class="product-grid__item-img">
-							<img src="uploads/our-projects/our9.jpg" alt="Модульный киоск №9" />
+							<img src="uploads/our-projects/our9.jpg" alt="Офис продаж" />
 						</a>
 						<h3>Офис продаж</h3>
 						<a class="card-more" href="#">

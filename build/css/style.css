@@ -1597,6 +1597,64 @@ legend {
   height: 100%;
 }
 
+.error {
+  margin: 0 auto;
+  max-width: 1920px;
+}
+.error-wrapper {
+  display: flex;
+  margin-top: 80px;
+}
+@media (max-width: 1024px) {
+  .error-wrapper {
+    margin-top: 60px;
+    flex-direction: column;
+  }
+}
+@media (max-width: 767px) {
+  .error-wrapper {
+    margin-top: 50px;
+  }
+}
+.error-item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.error-item h1 {
+  color: var(--gray400);
+  font-size: 260px;
+  font-weight: 700;
+  line-height: 100%;
+}
+@media (max-width: 767px) {
+  .error-item h1 {
+    font-size: 120px;
+  }
+}
+.error-item p {
+  margin: 30px 0 40px;
+  color: var(--dark);
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 120%;
+}
+@media (max-width: 767px) {
+  .error-item p {
+    font-size: 16px;
+  }
+}
+@media (max-width: 767px) {
+  .error-item img {
+    width: 320px;
+  }
+}
+.error .btn {
+  max-width: 360px;
+}
+
 .footer {
   padding: 50px 0;
   background-color: var(--gray600);
@@ -2080,6 +2138,161 @@ legend {
   .text-content + .jsReadMore {
     display: flex;
   }
+}
+
+.callback {
+  position: relative;
+  max-width: 552px;
+  width: 100%;
+  padding: 60px 60px 40px;
+  background: var(--gray200);
+  color: var(--dark);
+}
+@media (max-width: 767px) {
+  .callback {
+    padding: 40px 20px 30px;
+    max-width: 100%;
+    margin: 0 20px;
+  }
+}
+.callback-bg {
+  transform: translateY(-150%);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: rgba(17, 17, 17, 0.8);
+  transition: transform 0.5s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.callback-bg.show {
+  transform: translateY(0);
+}
+.callback > h2 {
+  margin-bottom: 10px;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 130%;
+  text-transform: uppercase;
+}
+@media (max-width: 767px) {
+  .callback > h2 {
+    font-size: 18px;
+  }
+}
+.callback > p {
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 140%;
+}
+@media (max-width: 767px) {
+  .callback > p {
+    font-size: 14px;
+  }
+}
+.callback label {
+  display: flex;
+}
+.callback label > input {
+  margin-bottom: 15px;
+  padding: 5px 20px;
+  height: 55px;
+  width: 100%;
+  font-size: 18px;
+  transition: box-shadow 0.2s;
+  background-color: var(--white);
+  border: 1px solid var(--gray600);
+}
+@media (max-width: 767px) {
+  .callback label > input {
+    font-size: 14px;
+  }
+}
+.callback label > input:hover {
+  box-shadow: 0 0 6px #aaa;
+}
+.callback textarea {
+  padding: 23px 20px;
+  width: 100%;
+  height: 90px;
+  background-color: var(--white);
+  border: 1px solid var(--gray600);
+  resize: none;
+}
+.callback label > input,
+.callback textarea {
+  color: var(--dark);
+}
+.callback label > input::placeholder,
+.callback textarea::placeholder {
+  color: var(--gray600);
+}
+.callback .accept {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  margin: 15px 0 30px;
+  padding-left: 28px;
+}
+@media (max-width: 767px) {
+  .callback .accept {
+    font-size: 14px;
+  }
+}
+.callback .accept::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 5px;
+  display: flex;
+  width: 18px;
+  height: 18px;
+  border-radius: 2px;
+  border: 1px solid var(--gray600);
+  transition: box-shadow 0.2s;
+}
+.callback .accept::after {
+  position: absolute;
+  left: 0;
+  top: 5px;
+  display: flex;
+  width: 18px;
+  height: 18px;
+  background: url(../images/svg/check.svg) center no-repeat;
+}
+.callback .accept:hover::before, .callback .accept:focus::before {
+  box-shadow: 0 0 5px var(--gray600);
+}
+.callback input[name=accept]:checked + .accept::before {
+  background-color: var(--accent);
+}
+.callback input[name=accept]:checked + .accept::after {
+  content: "";
+}
+.callback-close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  display: block;
+  width: 32px;
+  height: 32px;
+  background-color: unset;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+@media (max-width: 767px) {
+  .callback-close {
+    width: 22px;
+    height: 22px;
+  }
+}
+.callback-close:hover {
+  transform: scale(1.2);
 }
 
 .news.title-block {

@@ -245,3 +245,22 @@ if (document.querySelector(".jsReadMore")) {
 	});
 }
 // === end READ MORE
+
+// === start MODAL CALLBACK
+if (document.querySelector(".callback-bg")) {
+	const btnsOpen = document.querySelectorAll(".jsOpenModal");
+	const modalWin = document.querySelector(".callback-bg");
+	const closeWin = document.querySelector(".callback-close");
+
+	btnsOpen.forEach((btn) => {
+		btn.addEventListener("click", (event) => {
+			modalWin.classList.add("show");
+		});
+	});
+
+	closeWin.addEventListener("click", (event) => {
+		modalWin.classList.remove("show");
+	});
+}
+
+// === end MODAL CALLBACK
