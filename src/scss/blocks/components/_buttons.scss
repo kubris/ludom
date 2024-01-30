@@ -20,19 +20,19 @@
 		color: var(--accent);
 	}
 
-	&--big {
+	&.btn--big {
 		padding: 5px 50px;
 		height: 50px;
 		@include mw768 {
 			padding: 11px 26px;
 		}
 	}
-	&--mid {
+	&.btn--mid {
 		height: 43px;
 		padding: 5px 26px;
 	}
 
-	&--blue {
+	&.btn--blue {
 		color: var(--white);
 		background-color: var(--accent);
 		border: 1px solid var(--accent);

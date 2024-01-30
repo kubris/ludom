@@ -89,6 +89,31 @@ if (document.querySelector(".dop-info")) {
 }
 // === end DOP-INFO
 
+// === SLIDER OPPORTUNITY-SLIDER
+if (document.querySelector(".opportunity-slider")) {
+	if (window.innerWidth > 767) {
+		const sliderLazy = new Swiper(".opportunity-slider", {
+			slidesPerView: 2,
+			spaceBetween: 20,
+
+			navigation: {
+				nextEl: ".slider-next",
+				prevEl: ".slider-prev",
+			},
+
+			breakpoints: {
+				768: {
+					slidesPerView: 2.2,
+				},
+				1024: {
+					slidesPerView: 3,
+				},
+			},
+		});
+	}
+}
+// === end OPPORTUNITY-SLIDER
+
 // === SCROLL DRUGGING
 if (document.getElementById("categoriesList")) {
 	const box = document.getElementById("categoriesList");
@@ -200,22 +225,22 @@ if (document.querySelector(".aside-grid__item.drop-list")) {
 	});
 }
 
-if(document.querySelector(".product-catalog__filter-toggle")) {
+if (document.querySelector(".product-catalog__filter-toggle")) {
 	const productFilterBtnList = document.querySelector(".product-catalog__filter-toggle");
 
-	productFilterBtnList.addEventListener('click', (e) => {
-		e.currentTarget.classList.toggle('opened');
+	productFilterBtnList.addEventListener("click", (e) => {
+		e.currentTarget.classList.toggle("opened");
 	});
 }
 // === end ASIDE MENU DROPDOWN
 
 // === start READ MORE
-if(document.querySelector(".jsReadMore")) {
+if (document.querySelector(".jsReadMore")) {
 	const readMoreBtns = document.querySelectorAll(".jsReadMore");
 
 	readMoreBtns.forEach((rmBtn) => {
-		rmBtn.addEventListener('click', (e) => {
-			e.currentTarget.previousElementSibling.classList.toggle('full-height');
+		rmBtn.addEventListener("click", (e) => {
+			e.currentTarget.previousElementSibling.classList.toggle("full-height");
 		});
 	});
 }
