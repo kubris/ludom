@@ -114,7 +114,7 @@ if (document.querySelector(".opportunity-slider")) {
 }
 // === end OPPORTUNITY-SLIDER
 
-// === SCROLL DRUGGING
+// === SCROLL DRUGGING BLOG
 if (document.getElementById("categoriesList")) {
 	const box = document.getElementById("categoriesList");
 
@@ -154,7 +154,48 @@ if (document.getElementById("categoriesList")) {
 		box.scrollTop = scrollTop - walkY;
 	});
 }
-// === end SCROLL DRUGGING
+// === end SCROLL DRUGGING BLOG
+// === SCROLL DRUGGING BREADCRUMBS
+if (document.querySelector(".breadcrumbs ul")) {
+	const box = document.querySelector(".breadcrumbs ul");
+
+	let isDown = false;
+	let startX;
+	let startY;
+	let scrollLeft;
+	let scrollTop;
+
+	box.addEventListener("mousedown", (e) => {
+		isDown = true;
+		startX = e.pageX - box.offsetLeft;
+		startY = e.pageY - box.offsetTop;
+		scrollLeft = box.scrollLeft;
+		scrollTop = box.scrollTop;
+		box.style.cursor = "grabbing";
+	});
+
+	box.addEventListener("mouseleave", () => {
+		isDown = false;
+		box.style.cursor = "grab";
+	});
+
+	box.addEventListener("mouseup", () => {
+		isDown = false;
+		box.style.cursor = "grab";
+	});
+
+	document.addEventListener("mousemove", (e) => {
+		if (!isDown) return;
+		e.preventDefault();
+		const x = e.pageX - box.offsetLeft;
+		const y = e.pageY - box.offsetTop;
+		const walkX = (x - startX) * 1; // Change this number to adjust the scroll speed
+		const walkY = (y - startY) * 1; // Change this number to adjust the scroll speed
+		box.scrollLeft = scrollLeft - walkX;
+		box.scrollTop = scrollTop - walkY;
+	});
+}
+// === end SCROLL DRUGGING BREADCRUMBS
 
 // === FOOTER LIST
 if (document.querySelector(".js-footer-list")) {
@@ -290,3 +331,35 @@ if (document.querySelector(".drop")) {
 	}
 }
 /* === end DROPDOWN fields ==== */
+
+// === blogpost-slider
+if (document.querySelector(".blogpost-slider")) {
+	const sliderBlogpost = new Swiper(".blogpost-slider", {
+		loop: true,
+		slidesPerView: 2.2,
+		spaceBetween: 30,
+
+		navigation: {
+			nextEl: ".slider-next",
+			prevEl: ".slider-prev",
+		},
+
+		breakpoints: {
+			1024: {
+				slidesPerView: 4,
+			},
+		},
+		on: {
+			resize: function enableOnlyMobile(sliderBlogpost){
+				if(768 > window.innerWidth){
+					sliderBlogpost.disable()
+					sliderBlogpost.el.classList.add('-non-slider')
+				}else{
+					sliderBlogpost.enable()
+					sliderBlogpost.el.classList.remove('-non-slider')
+				}
+			},
+		}
+	});
+}
+// === end blogpost-slider

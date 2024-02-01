@@ -8,6 +8,7 @@
 	}
 
 	&__btn {
+		text-align: center;
 		margin-top: 40px;
 		@include mw768 {
 			margin-top: 30px;
@@ -95,6 +96,7 @@
 		img {
 			aspect-ratio: 378 / 260;
 			height: 100%;
+			width: 100%;
 			object-fit: cover;
 
 			@include mw1440 {aspect-ratio: 320 / 260;}

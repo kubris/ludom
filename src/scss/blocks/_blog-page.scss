@@ -7,6 +7,10 @@
 	line-height: 1.5;
 	white-space: nowrap;
 	transition: color 0.2s;
+	@include mw768 {
+		font-size: 16px;
+		line-height: 130%;
+	}
 
 	&::after {
 		content: "";
@@ -152,8 +156,9 @@
 		}
 
 		.drop {
-			padding: 20px;
+			padding: 18px;
 			border: 1px solid var(--gray400);
+			@include mw768 {padding: 14px;}
 
 			&list {
 				position: absolute;

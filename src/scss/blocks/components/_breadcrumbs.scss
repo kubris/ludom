@@ -1,18 +1,24 @@
 .breadcrumbs {
-
 	ul {
 		display: flex;
 		align-items: center;
 		gap: 0 10px;
-		flex-wrap: wrap;
+		flex-wrap: nowrap;
+		overflow-x: auto;
+		&::-webkit-scrollbar {
+			width: 0;
+			height: 0;
+		}
 
 		li {
 			display: flex;
 			gap: 10px;
 			color: var(--white);
+			white-space: nowrap;
+			@include mw768 {font-size: 16px}
+
 			&:not(:last-child)::after {
-				content: '/';
-				
+				content: "/";
 			}
 
 			&:last-child {
@@ -20,6 +26,12 @@
 					white-space: nowrap;
 					color: var(--accent);
 					pointer-events: none;
+					-webkit-touch-callout: none;
+					-webkit-user-select: none;
+					-khtml-user-select: none;
+					-moz-user-select: none;
+					-ms-user-select: none;
+					user-select: none;
 				}
 			}
 		}

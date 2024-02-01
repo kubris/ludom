@@ -103,6 +103,7 @@ gulp.task('fonts:dev', function(){
 gulp.task('uploads:dev', function(){
 	return gulp.src('./src/uploads/**/*')
 		.pipe(changed('./build/uploads/'))
+		//.pipe(imagemin({ verbose: true }))
 		.pipe(gulp.dest('./build/uploads/'))
 });
 // === end UPLOADS ===

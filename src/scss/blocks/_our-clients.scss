@@ -1,6 +1,5 @@
 // our-clients
 .our-clients {
-
 	&__content {
 		.title-block {
 			margin-bottom: 30px;
@@ -11,8 +10,6 @@
 		margin-top: -63px;
 		padding-top: 63px;
 		overflow: hidden;
-		.swiper-wrapper {
-		}
 		.swiper-slide {
 			box-sizing: border-box;
 			display: flex;
@@ -22,37 +19,38 @@
 			border: 1px solid var(--border600);
 		}
 
-		.slider {
-			&-clients {
-				position: relative;
-			}
-			&-buttons {
-				position: absolute;
-				right: 0;
-				top: -63px;
-				display: flex;
-				gap: 20px;
-				@include mw768 {
-					display: none;
-				}
-			}
+		
+	}
+}
+.our-clients .slider {
+	&-clients {
+		position: relative;
+	}
+	&-buttons {
+		position: absolute;
+		right: 0;
+		top: -63px;
+		display: flex;
+		gap: 20px;
+		@include mw768 {
+			display: none;
+		}
+	}
 
-			&-prev,
-			&-next {
-				display: flex;
-				height: 34px;
-				padding: 12px 16px;
-				justify-content: center;
-				align-items: center;
-				border-radius: 4px;
-				border: 1px solid var(--border600);
-				cursor: pointer;
-				transition: background-color 0.2s;
+	&-prev,
+	&-next {
+		display: flex;
+		height: 34px;
+		padding: 12px 16px;
+		justify-content: center;
+		align-items: center;
+		border-radius: 4px;
+		border: 1px solid var(--border600);
+		cursor: pointer;
+		transition: background-color 0.2s;
 
-				&:hover {
-					background-color: var(--border400);
-				}
-			}
+		&:hover {
+			background-color: var(--border400);
 		}
 	}
 }

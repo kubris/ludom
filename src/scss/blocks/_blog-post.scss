@@ -1,0 +1,227 @@
+// -- slider
+
+.slider {
+		position: relative;
+	&-buttons {
+		position: absolute;
+		right: 0;
+		top: -63px;
+		display: flex;
+		gap: 20px;
+		@include mw768 {
+			display: none;
+		}
+	}
+
+	&-prev,
+	&-next {
+		display: flex;
+		height: 34px;
+		padding: 12px 16px;
+		justify-content: center;
+		align-items: center;
+		border-radius: 4px;
+		border: 1px solid var(--border600);
+		cursor: pointer;
+		transition: background-color 0.2s;
+
+		&:hover {
+			background-color: var(--border400);
+		}
+	}
+}
+
+// --blog-post
+.blogpost {
+
+	&-head {
+		.blogpage-head__title {
+			margin: 60px 0 20px;
+			display: none;
+			@include mw1024 {display: flex}
+			@include mw768 {margin: 40px 0 0}
+		}		
+	}
+
+	&-module {
+		color: var(--dark);
+		font-size: 16px;
+		&__single {
+			margin: 0 auto;
+			max-width: 920px;
+			width: 100%;
+
+			&.post-head {
+				display: flex;
+				flex-direction: column;
+				gap: 15px;
+				margin-top: 40px;
+				margin-bottom: 40px;
+				@include mw768 {
+					margin-bottom: 30px;
+				}
+
+				h1 {
+					max-width: 775px;
+					font-weight: 600;
+					font-size: 36px;
+					line-height: 130%;
+					text-transform: uppercase;
+					@include mw768 {font-size: 18px}
+				}
+				p {
+					max-width: 775px;
+					font-weight: 500;
+					font-size: 18px;
+					line-height: 140%;
+					@include mw768 {font-size: 16px}
+				}
+			}
+
+			img {
+				display: block;
+				margin-bottom: 40px;
+				@include mw768 {
+					margin-bottom: 30px;
+					height: 282px;
+					width: 100%;
+					object-fit: cover;
+				}
+			}
+
+			ol {
+				margin-bottom: 40px;
+				list-style-position: inside;
+				padding: 30px 20px;
+				font-weight: 500;
+				font-size: 26px;
+				line-height: 120%;
+				border: 1px solid var(--gray400);
+				margin-bottom: 40px;
+				@include mw768 {
+					padding: 20px 10px;
+					font-size: 18px;
+					margin-bottom: 30px;
+				}
+				li {
+					margin-top: 15px;
+					font-weight: 500;
+					font-size: 20px;
+					line-height: 130%;
+					&:first-child {
+						margin-top: 20px;
+						@include mw768 {
+							margin-top: 15px;
+						}
+					}
+					@include mw768 {
+						font-size: 16px;
+					}
+				}
+			}
+
+			h2 {
+				margin-bottom: 20px;
+				font-weight: 500;
+				font-size: 26px;
+				line-height: 120%;
+				@include mw768 {
+					font-size: 18px;
+				}
+			}
+			p {				
+				font-weight: 400;
+				font-size: 16px;
+				line-height: 140%;
+				& + p {
+					margin-top: 15px;
+					margin-bottom: 0;
+				}
+				& + ul {
+					margin-top: 20px;
+					@include mw768 {margin-bottom: 15px}
+				}
+				& + h2 {
+					margin-top: 40px;
+					@include mw768 {margin-top: 30px}
+				}
+
+				@include mw768 {
+					font-size: 14px;
+				}
+			}
+
+			ul {
+				font-size: 16px;
+				color: var(--dark);
+				list-style-type: none;
+				@include mw768 {
+					font-size: 14px;
+				}
+				li {
+					margin-bottom: 15px;
+					text-indent: -5px;
+					font-size: inherit;
+					&:before {
+						content: "–";
+						text-indent: -5px;
+					}
+
+					&:first-child {margin-top: 15px}
+				}
+			}
+
+			button {
+				margin: 40px 0;
+				@include mw768 {margin: 30px 0}
+
+			}
+		}
+	}
+
+	&.socials {
+		margin-top: 60px;
+		@include mw1024 {
+			margin-top: 65px;
+		}
+		@include mw768 {
+			margin-top: 40px;
+		}
+		a {
+			width: 36px;
+			height: 36px;
+			img {
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+
+	&.title-block {margin-bottom: 40px;}
+
+	&-slider {
+		position: relative;
+		margin-top: -83px;
+		padding-top: 83px;
+		overflow: hidden;
+
+		.slider-buttons {
+			top: 0;
+		}
+
+		&.-non-slider .swiper-wrapper {
+			transform: inherit!important;
+			display: grid;
+			grid-template-columns: 1fr;
+			gap: 10px;
+		}
+		&.-non-slider .swiper-slide {
+			width: inherit!important;
+
+			&:nth-child(n+4) { display: none }
+		}
+		&.-non-slider .swiper-slide-duplicate {
+			display: none;
+		}
+	}
+}
