@@ -251,9 +251,7 @@ if (document.querySelector(".dropdown-toggle")) {
 
 				if (item.classList.contains("slide")) {
 					delAllOpened(menuDropItems);
-					console.log('if slide here');
 				} else {
-					console.log('if slide NOT here');
 					item.classList.add("slide");
 				}
 			}
@@ -314,15 +312,38 @@ if (document.querySelector(".callback-bg")) {
 	btnsOpen.forEach((btn) => {
 		btn.addEventListener("click", (event) => {
 			modalWin.classList.add("show");
+			document.body.classList.add('no-scroll');
 		});
 	});
 
 	closeWin.addEventListener("click", (event) => {
 		modalWin.classList.remove("show");
+		document.body.classList.remove('no-scroll');
 	});
 }
 
 // === end MODAL CALLBACK
+
+// === start MODAL SEARCH
+if (document.querySelector(".modal-search__bg")) {
+	const btnsOpen = document.querySelectorAll(".jsOpenSearch");
+	const searchWin = document.querySelector(".modal-search__bg");
+	const closeWin = document.querySelector(".modal-search__close");
+
+	btnsOpen.forEach((btn) => {
+		btn.addEventListener("click", (event) => {
+			searchWin.classList.add("show");
+			document.body.classList.add('no-scroll');
+		});
+	});
+
+	closeWin.addEventListener("click", (event) => {
+		searchWin.classList.remove("show");
+		document.body.classList.remove('no-scroll');
+	});
+}
+
+// === end MODAL SEARCH
 
 /* === start DROPDOWN fields ==== */
 if (document.querySelector(".drop")) {

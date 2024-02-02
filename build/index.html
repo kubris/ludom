@@ -90,12 +90,15 @@
 				</ul>
 				<div class=" menu__btns-block">
 					<button class="btn btn--mid btn--black-transp btn--wide-mobile">Написать в чат</button>
-					<button class="btn btn--mid btn--blue btn--wide-mobile">Заказать звонок</button>
+					<button class="btn btn--mid btn--blue btn--wide-mobile">Заказать звонок</button>					
 				</div>
 			</div>
 			<div class="navbar-buttons">
 				<button class="btn btn--mid btn--black-transp">Написать в чат</button>
 				<button class="btn btn--mid btn--blue jsOpenModal">Заказать звонок</button>
+				<button class="jsOpenSearch">
+					<img src="images/svg/loupe.svg" width="22">
+				</button>
 				<button class="navbar-toggler" type="button">
 					<span class="navbar-toggler-icon"></span>
 				</button>
@@ -163,7 +166,7 @@
 					<p>
 						У нас собственные маркетинговый, проектный, производственный и монтажный отделы, поэтому вы не переплачиваете сторонним подрядчикам и не тратите время на организацию всех работ.
 					</p>
-					<button class="btn btn--blue btn--big btn--wide-mobile">Рассчитать проект</button>
+					<button class="btn btn--blue btn--big btn--wide-mobile jsOpenSearch">Рассчитать проект</button>
 				</div>
 			</div>
 			<!----- end why-us__content ------->
@@ -860,6 +863,49 @@
 	</div>
 </div>
 <!----- end modal callback ------->
+			<!----- start modal callback ----->
+<div class="modal-search__bg">
+	<div class="modal-search">
+		<button class="modal-search__close">
+			<img src="images/svg/close.svg" alt="Close modal" />
+		</button>
+
+		<form>
+			<label class="modal-search__field">
+				<button class="modal-form__submit" type="submit"><img src="images/svg/loupe.svg" /></button>
+				<input type="text" name="user-search" placeholder="Строка поиска" />
+			</label>
+		</form>
+
+		<div class="modal-search__result">
+			<a href="#" class="modal-search__item">
+				<sapn class="modal-search__img">
+					<img src="images/search.png" />
+				</sapn>
+				<sapn class="modal-search__text">Модульное здание №1. Проект разработан..</sapn>
+			</a>
+			<a href="#" class="modal-search__item">
+				<sapn class="modal-search__img">
+					<img src="images/search.png" />
+				</sapn>
+				<sapn class="modal-search__text">Модульное здание №1. Проект разработан..</sapn>
+			</a>
+			<a href="#" class="modal-search__item">
+				<sapn class="modal-search__img">
+					<img src="images/search.png" />
+				</sapn>
+				<sapn class="modal-search__text">Модульное здание №1. Проект разработан..</sapn>
+			</a>
+		</div>
+
+		<button class="card-more modal-search__show-all">
+			<span>Показать всё</span>
+			<img src="images/svg/arrow-diag.svg" alt="Показать всё" />
+		</button>
+	</div>
+</div>
+<!----- end modal callback ------->
+
 
 		<script src="js/swiper-bundle.min.js"></script>
 		<script src="js/index.js"></script>
