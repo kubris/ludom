@@ -1,0 +1,80 @@
+// --tab
+// .drop-field {
+// 	margin: 100px auto 0;
+// 	padding: 0 50px;
+// 	max-width: 1600px;
+// }
+// @media(max-width: 768px) {.drop { padding: 0 20px }}
+
+.drop-head {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 18px 20px;
+	width: 100%;
+	font-size: 15px;
+	color: #1b1b1b;
+	background-color: #fff;
+	transition: 0.3s;
+}
+.drop-head.drop--top {border-top: 1px solid #6c757d;}
+.drop-head > .drop-item {
+	cursor: pointer;
+}
+.drop-head.active .drop-item,
+.drop-head:hover .drop-item {
+	color: #4c87fb;
+}
+.drop-head .drop-link > img,
+.drop-head .drop-link > svg {
+	display: block;
+	width: 28px;
+	height: 28px;
+	transform: rotate(0deg);
+	transition: 0.2s;
+}
+@media(max-width: 768px) {
+	.drop-head .drop-link > img,
+	.drop-head .drop-link > svg {
+		width: 22px;
+		height: 22px;
+	}}
+
+.drop-head.active .drop-link > img,
+.drop-head.active .drop-link > svg {
+	transform: rotate(90deg);
+}
+
+.drop-body {
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.2s ease-out;
+	border-bottom: 1px solid #6c757d;
+}
+.drop-item {
+	display: grid;
+	width: 100%;
+	grid-gap: 20px;
+	grid-template-columns: 86px 1fr 30px;
+	align-self: center;
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 130%;
+	color: #101113;
+	background-color: #fff;
+	transition: color 0.2s;
+}
+@media(max-width: 1440px) {.drop-item{grid-template-columns: 73px 1fr 30px}}
+@media(max-width: 1024px) {.drop-item{grid-template-columns: auto 1fr 30px}}
+@media(max-width: 768px) {.drop-item{ font-size: 16px; }}
+
+.drop-item p {
+	grid-column: 2 / 3;
+	padding: 20px 0 40px;
+	max-width: 600px;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 140%;
+	color: #101113;
+}
+@media(max-width: 768px) {.drop-item p { font-size: 14px }}

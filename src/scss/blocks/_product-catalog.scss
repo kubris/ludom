@@ -34,9 +34,15 @@
 
 	&.pagination {
 		margin-bottom: 200px;
-		@include mw1440 {margin-bottom: 180px}
-		@include mw1024 {margin-bottom: 120px}
-		@include mw768 {margin-bottom: 100px}
+		@include mw1440 {
+			margin-bottom: 180px;
+		}
+		@include mw1024 {
+			margin-bottom: 120px;
+		}
+		@include mw768 {
+			margin-bottom: 100px;
+		}
 	}
 }
 
@@ -47,15 +53,12 @@
 
 		&__item {
 			display: block;
-			padding: 20px;
 			border-bottom: 1px solid var(--gray400);
-			transition: background-color 0.2s, color 0.2s;
 
 			&:hover,
 			&.active {
 				padding: 0;
 				& > span {
-					padding: 20px;
 					background-color: var(--accent);
 					color: var(--white);
 				}
@@ -65,6 +68,7 @@
 			}
 
 			& > span {
+				padding: 20px;
 				display: flex;
 				align-items: center;
 				justify-content: space-between;
@@ -137,7 +141,7 @@
 		margin-top: 40px;
 		grid-template-columns: repeat(2, 1fr);
 	}
-	@include mw768 {		
+	@include mw768 {
 		grid-auto-rows: auto;
 		grid-gap: 16px 16px;
 	}
@@ -150,7 +154,7 @@
 		transition: box-shadow 0.2s;
 
 		&:hover {
-			box-shadow: 3px 3px 8px var(--gray600);
+			box-shadow: 3px 3px 8px var(--gray200);
 		}
 
 		&-img {
@@ -248,7 +252,9 @@
 
 .product-catalog__filter-toggle {
 	display: none;
-	@include mw1024 {display: flex}
+	@include mw1024 {
+		display: flex;
+	}
 }
 
 .aside-grid__filter-mobile {

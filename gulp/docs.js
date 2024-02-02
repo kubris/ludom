@@ -66,8 +66,8 @@ gulp.task("html:docs", function () {
 		.src(["./src/html/**/*.html", "!./src/html/blocks/*.html"])
 		.pipe(plumber(plumberNotify("HTML")))
 		.pipe(fileInclude(fileIncludeSettings))
-		.pipe(webpHTML())
-		.pipe(htmlclean())
+		//.pipe(webpHTML())
+		//.pipe(htmlclean())
 		.pipe(gulp.dest("./docs/"));
 });
 // end HTML include
@@ -79,10 +79,10 @@ gulp.task("sass:docs", function () {
 		.pipe(plumber(plumberNotify("SASS")))
 		.pipe(sassGlob())
 		.pipe(sass())
-		.pipe(webpCss())
+		//.pipe(webpCss())
 		.pipe(groupMedia())
 		.pipe(autoprefixer(['last 15 versions', '> 1%'], { cascade: true }))		
-		.pipe(csso())
+		//.pipe(csso())
 		.pipe(gulp.dest("./docs/css/"));
 });
 // end SCSS
@@ -91,7 +91,7 @@ gulp.task("sass:docs", function () {
 gulp.task("images:docs", function () {
 	return gulp
 		.src("./src/images/**/*")
-		.pipe(webp())
+		//.pipe(webp())
 		.pipe(gulp.dest("./docs/images/"))
 		.pipe(gulp.src("./src/images/**/*"))
 		.pipe(imagemin({ verbose: true }))
@@ -107,21 +107,21 @@ gulp.task("fonts:docs", function () {
 });
 // === end FONTS ===
 
-// === FILES ===
-gulp.task("files:docs", function () {
-	return gulp
-		.src("./src/files/**/*")
-		.pipe(gulp.dest("./docs/files/"));
+// === UPLOADS ===
+gulp.task('uploads:docs', function(){
+	return gulp.src('./src/uploads/**/*')
+		.pipe(imagemin({ verbose: true }))
+		.pipe(gulp.dest('./docs/uploads/'))
 });
-// === end FILES ===
+// === end UPLOADS ===
 
 // === JS ===
 gulp.task("js:docs", function () {
 	return gulp
 		.src("./src/js/*.js")
 		.pipe(plumber(plumberNotify("JS")))
-		.pipe(babel(babelSettings))
-		.pipe(webpack(require("./../webpack.config.js")))
+		//.pipe(babel(babelSettings))
+		//.pipe(webpack(require("./../webpack.config.js")))
 		.pipe(gulp.dest("./docs/js/"));
 });
 // === end JS ===

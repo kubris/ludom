@@ -19,7 +19,7 @@ gulp.task('default',
 gulp.task(
 	'docs', 
 	gulp.series('clean:docs', 
-		gulp.parallel('html:docs', 'sass:docs', 'images:docs', 'fonts:docs', 'files:docs', 'js:docs'),
+		gulp.parallel('html:docs', 'sass:docs', 'images:docs', 'fonts:docs', 'uploads:docs', 'js:docs'),
 		gulp.parallel('server:docs')
 ));
 

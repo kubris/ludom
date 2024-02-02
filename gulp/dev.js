@@ -74,9 +74,8 @@ gulp.task('sass:dev', function(){
 		.pipe(plumber(plumberNotify('SASS')))
 		.pipe(sassGlob())
 		.pipe(sourceMaps.init())
-		.pipe(sass())
-		//.pipe(groupMedia())
-		//.pipe(autoprefixer(['last 15 versions', '> 1%'], { cascade: true }))
+		.pipe(sass())		
+		.pipe(autoprefixer(['last 15 versions', '> 1%'], { cascade: true }))
 		.pipe(sourceMaps.write('.'))
 		.pipe(gulp.dest('./build/css/'))
 });
