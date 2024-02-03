@@ -495,24 +495,28 @@ if (document.querySelector(".drop-head")) {
 
 // === start FORMS actions
 if (document.querySelector(".form-ask")) {
-	const form = document.querySelector(".form-ask");
-	const subBtn = form.querySelector("button");
-	const accept = form.querySelector('[name="userAccept"]');
+	const forms = document.querySelectorAll(".form-ask");
+	//const subBtn = form.querySelector("button");
+	//const accept = form.querySelector('[name="userAccept"]');
 
-	subBtn.addEventListener("click", (e) => {
-		e.preventDefault();
-		if (isAcceptChecked(accept)) {
-			alert("Спасибо, что нажали!");
-		} else {
-			alert("Ознакомьтесь с политикой безопасности");
-		}
+	forms.forEach((item) => {
+		const subBtn = item.querySelector("button");
+		const accept = item.querySelector('[name="userAccept"]');
+		subBtn.addEventListener("click", (e) => {
+			e.preventDefault();
+			if (isAcceptChecked(accept)) {
+				alert("Спасибо, что нажали!");
+			} else {
+				alert("Ознакомьтесь с политикой безопасности");
+			}
+		});
 	});
 }
+
 function isAcceptChecked(el) {
 	let res = el.checked ? true : false;
 	return res;
 }
-
 // === end FORMS actions
 
 // === start BLOG TAB

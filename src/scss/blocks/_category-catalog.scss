@@ -18,7 +18,7 @@
 			grid-template-columns: repeat(2, 1fr);
 		}
 		@include mw768 {
-			grid-template-columns: repeat(2, 152px);
+			grid-template-columns: repeat(auto-fill, minmax(152px, 1fr));
 			justify-content: center;
 		}
 	}
@@ -35,9 +35,9 @@
 			height: 320px;
 		}
 		@include mw768 {
-			padding: 20px 20px 0;
+			padding: 0;
 			height: 152px;
-			padding: 10px;
+			overflow: hidden;
 		}
 
 		&-title {
@@ -45,16 +45,30 @@
 			font-size: 26px;
 			font-weight: 500;
 			line-height: 120%;
+			@include mw1024 {
+				padding-right: 45px;
+			}
 			@include mw768 {
-				font-size: 18px;
+				position: absolute;
+				top: 5px;
+				left: 10px;
+				padding-right: 0;
+				font-size: 17px;
 			}
 		}
 
 		&-img {
 			height: 100%;
 			img {
+				display: block;
+				padding-top: 5px;
 				height: 100%;
+				width: 100%;
 				object-fit: cover;
+			}
+			@include mw768 {
+				margin-top: auto;
+				height: 116px;
 			}
 		}
 

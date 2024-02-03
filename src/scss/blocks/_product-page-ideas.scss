@@ -18,6 +18,9 @@
 			"i7 i7 i7 i7 i7 i7 i8 i8 i8 i8 i8 i8"
 			"i9 i9 i9 i9 i9 i9 i9 i9 i9 i9 i9 i9 ";
 		}
+		@include mw768 {
+			grid-template-rows: repeat(3, 150px);
+		}
 	}
 
 	&-item {
