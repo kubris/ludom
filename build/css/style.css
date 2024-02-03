@@ -3838,6 +3838,11 @@ legend {
   padding-bottom: 10px;
   transition: box-shadow 0.2s;
 }
+@media (max-width: 767px) {
+  .product-grid__item:nth-child(n+9) {
+    display: none;
+  }
+}
 .product-grid__item:hover {
   box-shadow: 3px 3px 8px var(--gray200);
 }
