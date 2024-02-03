@@ -303,6 +303,20 @@ if (document.querySelector(".jsReadMore")) {
 }
 // === end READ MORE
 
+// === start TOGGLE SCROLL
+let disableScroll = function() {
+	let paddingOffset = window.innerWidth - document.body.offsetWidth + 'px';
+	document.body.classList.add('no-scroll');
+	document.body.style.paddingRight = paddingOffset;
+}
+
+let enableScroll = function() {
+	//let paddingOffset;
+	document.body.classList.remove('no-scroll');
+	document.body.style.paddingRight = 0;
+}
+// === end TOGGLE SCROLL
+
 // === start MODAL CALLBACK
 if (document.querySelector(".callback-bg")) {
 	const btnsOpen = document.querySelectorAll(".jsOpenModal");
@@ -312,13 +326,13 @@ if (document.querySelector(".callback-bg")) {
 	btnsOpen.forEach((btn) => {
 		btn.addEventListener("click", (event) => {
 			modalWin.classList.add("show");
-			document.body.classList.add('no-scroll');
+			disableScroll();
 		});
 	});
 
 	closeWin.addEventListener("click", (event) => {
 		modalWin.classList.remove("show");
-		document.body.classList.remove('no-scroll');
+		enableScroll();
 	});
 }
 
@@ -333,13 +347,13 @@ if (document.querySelector(".modal-search__bg")) {
 	btnsOpen.forEach((btn) => {
 		btn.addEventListener("click", (event) => {
 			searchWin.classList.add("show");
-			document.body.classList.add('no-scroll');
+			disableScroll();
 		});
 	});
 
 	closeWin.addEventListener("click", (event) => {
 		searchWin.classList.remove("show");
-		document.body.classList.remove('no-scroll');
+		enableScroll();
 	});
 }
 
@@ -454,3 +468,73 @@ if (document.querySelector(".drop-head")) {
 	);
 }
 // === end TAB
+
+// === start FORMS actions
+if(document.querySelector('.form-ask')){
+	const form = document.querySelector('.form-ask');
+	const subBtn = form.querySelector('button');
+	const accept = form.querySelector('[name="userAccept"]');
+
+
+	subBtn.addEventListener('click', (e) => {
+		e.preventDefault();
+		if(isAcceptChecked(accept)){
+			alert('Спасибо, что нажали!');
+		} else {
+			alert('Ознакомьтесь с политикой безопасности');
+		}
+	});
+}
+function isAcceptChecked(el) {
+	let res = el.checked ? true : false;
+    return res;
+}
+
+// === end FORMS actions
+
+// === start BLOG TAB
+const fadeIn = (el, timeout, display) => {
+	el.style.opacity = 0;
+	el.style.display = display || "block";
+	el.style.transition = `opacity ${timeout}ms`;
+	setTimeout(() => {
+		el.style.opacity = 1;
+	}, 10);
+};
+
+function hideAll(els) {
+	els.forEach((item) => {
+		item.style.display = "none";
+	});
+}
+
+function delAllActiveBtns(els) {
+	els.forEach((item) => {
+		item.contains.classList = "active" ? item.classList.remove("active") : false;
+	});
+}
+
+if (document.querySelector(".thb") && document.querySelector(".tbc")) {
+	const btns = document.querySelectorAll(".thb");
+	const blocks = document.querySelectorAll(".tbc");
+	btns.forEach((btn) => {
+		btn.addEventListener("click", (e) => {
+			let currBtn = e.currentTarget.dataset.btn;
+			let currBlock = document.querySelector("[data-text=" + currBtn + "]");
+
+			delAllActiveBtns(btns);
+			let isClass = e.currentTarget.contains.classList == "active";
+			!isClass ? e.currentTarget.classList.add("active") : false;
+
+			hideAll(blocks);
+
+			if (currBlock) {
+				fadeIn(currBlock, 1000, "grid");
+			} else {
+				fadeIn(blocks[0], 1000, "grid");
+			}
+		});
+	});
+}
+
+// === end BLOG TAB

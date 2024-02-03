@@ -75,7 +75,7 @@ gulp.task('sass:dev', function(){
 		.pipe(sassGlob())
 		.pipe(sourceMaps.init())
 		.pipe(sass())		
-		.pipe(autoprefixer(['last 15 versions', '> 1%'], { cascade: true }))
+		//.pipe(autoprefixer(['last 15 versions', '> 1%'], { cascade: true }))
 		.pipe(sourceMaps.write('.'))
 		.pipe(gulp.dest('./build/css/'))
 });
@@ -85,7 +85,6 @@ gulp.task('sass:dev', function(){
 gulp.task('images:dev', function(){
 	return gulp.src('./src/images/**/*')
 		.pipe(changed('./build/images/'))
-		//.pipe(imagemin({ verbose: true }))
 		.pipe(gulp.dest('./build/images/'))
 });
 // end IMAGES
@@ -102,7 +101,6 @@ gulp.task('fonts:dev', function(){
 gulp.task('uploads:dev', function(){
 	return gulp.src('./src/uploads/**/*')
 		.pipe(changed('./build/uploads/'))
-		//.pipe(imagemin({ verbose: true }))
 		.pipe(gulp.dest('./build/uploads/'))
 });
 // === end UPLOADS ===

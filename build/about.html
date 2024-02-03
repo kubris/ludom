@@ -293,7 +293,7 @@
 			<!----- start ready-to-answer__content ----->
 			<div class="ready-to-answer__content">
 				<h2>Мы <span class="accent-color">готовы ответить</span> на Ваши вопросы</h2>
-				<button class="btn btn--blue btn--big tablet-hide">Есть вопрос?</button>
+				<button class="btn btn--blue btn--big tablet-hide jsOpenModal">Есть вопрос?</button>
 			</div>
 			<!----- end ready-to-answer__content ------->
 
@@ -319,7 +319,7 @@
 				</ul>				
 			</div>
 			<!----- end ready-to-answer__table ------->
-			<button class="btn btn--blue btn--big tablet-show-center btn--wide-mobile">Есть вопрос?</button>
+			<button class="btn btn--blue btn--big tablet-show-center btn--wide-mobile jsOpenModal">Есть вопрос?</button>
 		</div>
 	</div>
 </section>
@@ -440,15 +440,15 @@
 			<p>Оставьте контактные данные, чтобы мы связались с вами </p>
 			<form class="form-ask">
 				<label>
-					<input type="text" name="userName" placeholder="Имя" required>
+					<input type="text" name="userName" placeholder="Имя">
 				</label>
 				<label>
-					<input type="tel" name="userPhone" placeholder="Телефон" required>
+					<input type="tel" name="userPhone" placeholder="Телефон">
 				</label>
 				<textarea name="userMessage" placeholder="Сообщение"></textarea>
 				<label class="form-ask__accept">
-					<input type="checkbox" name="userAccept" required>
-					Ознакомлен и согласен с политикой обработки персональных данных
+					<input type="checkbox" name="userAccept" required>					
+					Ознакомлен и согласен с <a href="error-404.html">политикой обработки персональных данных</a>
 				</label>
 				<button class="btn btn--blue btn--big btn--wide-mobile" type="submit">Отправить</button>
 			</form>
@@ -528,6 +528,83 @@
 	</div>
 	<!-- // container -->
 </footer>
+
+
+			<!----- start modal callback ----->
+<div class="callback-bg">
+	<div class="callback">
+		<button class="callback-close">
+			<img src="images/svg/close.svg" alt="Close modal">
+		</button>
+		<h2>Обратный звонок</h2>
+		<p>
+			Оставьте контактные данные, чтобы мы связались с вами 
+		</p>
+		<form>
+			<label>
+				<input type="text"  name="user" placeholder="Имя">
+			</label>
+			<label>
+				<input type="tel"  name="phone" placeholder="Телефон">
+			</label>
+			<textarea name="message" placeholder="Сообщение"></textarea>
+
+			<label>
+				<input class="v-hidden" type="checkbox"  name="accept" required>
+				<span class="accept">
+					Ознакомлен и согласен с политикой обработки персональных данных
+				</span>
+			</label>
+
+			<button type="submit" class="btn btn--blue btn--big jsSubmit">
+				Отправить</button>
+		</form>
+	</div>
+</div>
+<!----- end modal callback ------->
+			
+			<!----- start modal callback ----->
+<div class="modal-search__bg">
+	<div class="modal-search">
+		<button class="modal-search__close">
+			<img src="images/svg/close.svg" alt="Close modal" />
+		</button>
+
+		<form>
+			<label class="modal-search__field">
+				<button class="modal-form__submit" type="submit"><img src="images/svg/loupe.svg" /></button>
+				<input type="text" name="user-search" placeholder="Строка поиска" />
+			</label>
+		</form>
+
+		<div class="modal-search__result">
+			<a href="#" class="modal-search__item">
+				<sapn class="modal-search__img">
+					<img src="images/search.png" />
+				</sapn>
+				<sapn class="modal-search__text">Модульное здание №1. Проект разработан..</sapn>
+			</a>
+			<a href="#" class="modal-search__item">
+				<sapn class="modal-search__img">
+					<img src="images/search.png" />
+				</sapn>
+				<sapn class="modal-search__text">Модульное здание №1. Проект разработан..</sapn>
+			</a>
+			<a href="#" class="modal-search__item">
+				<sapn class="modal-search__img">
+					<img src="images/search.png" />
+				</sapn>
+				<sapn class="modal-search__text">Модульное здание №1. Проект разработан..</sapn>
+			</a>
+		</div>
+
+		<button class="card-more modal-search__show-all">
+			<span>Показать всё</span>
+			<img src="images/svg/arrow-diag.svg" alt="Показать всё" />
+		</button>
+	</div>
+</div>
+<!----- end modal callback ------->
 
 
 		<script src="js/swiper-bundle.min.js"></script>
