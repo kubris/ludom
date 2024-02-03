@@ -70,13 +70,6 @@
 // post-list
 .post {
 
-	&-item {
-		@include mw768 {
-			margin: 0 auto;
-			max-width: 380px;
-		}
-	}
-
 	&-list {
 		&:not(.tbc) {display: grid}
 		grid-template-columns: repeat(4, 1fr);
@@ -89,7 +82,14 @@
 			grid-template-columns: 1fr;
 			gap: 20px;
 		}
+	}
 
+	&-item {
+		cursor: pointer;
+		@include mw768 {
+			margin: 0 auto;
+			max-width: 380px;
+		}
 	}
 
 	&-img {

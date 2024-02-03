@@ -1864,12 +1864,6 @@ legend {
   }
 }
 
-@media (max-width: 767px) {
-  .post-item {
-    margin: 0 auto;
-    max-width: 380px;
-  }
-}
 .post-list {
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 30px;
@@ -1887,6 +1881,15 @@ legend {
   .post-list {
     grid-template-columns: 1fr;
     gap: 20px;
+  }
+}
+.post-item {
+  cursor: pointer;
+}
+@media (max-width: 767px) {
+  .post-item {
+    margin: 0 auto;
+    max-width: 380px;
   }
 }
 .post-img {

@@ -538,3 +538,18 @@ if (document.querySelector(".thb") && document.querySelector(".tbc")) {
 }
 
 // === end BLOG TAB
+
+// === start BLOG POSTLINK
+if(document.querySelector('.post-item')) {
+	const allPosts = document.querySelectorAll('.post-item[data-postlink]');
+
+	allPosts.forEach( (post) => {
+		post.addEventListener('click', (e) => {
+			let link = e.currentTarget.dataset.postlink;
+			location.href = link;
+		});
+	});
+
+}
+// === end BLOG POSTLINK
+
