@@ -24,9 +24,8 @@
 	}
 	@include mw768 {
 		padding-bottom: 20px;
-		grid-gap: 10px;
-		grid-template-columns: repeat(4, 1fr);
-		overflow-x: auto;
+		display: flex;
+		gap: 0;
 	}
 
 	&__img {

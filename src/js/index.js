@@ -114,6 +114,31 @@ if (document.querySelector(".opportunity-slider")) {
 }
 // === end OPPORTUNITY-SLIDER
 
+// === SLIDER OPPORTUNITY-SLIDER
+if (document.querySelector(".our-projects__gallery")) {
+	const sliderOnMobile = new Swiper(".our-projects__gallery", {
+		slidesPerView: 2.2,
+		spaceBetween: 10,
+		breakpoints: {
+			768: {
+				slidesPerView: "auto",
+			},
+		},
+		on: {
+			resize: function enableOnMobile(sliderOnMobile) {
+				if (768 < window.innerWidth) {
+					sliderOnMobile.disable();
+					sliderOnMobile.el.classList.add("-non-slider");
+				} else {
+					sliderOnMobile.enable();
+					sliderOnMobile.el.classList.remove("-non-slider");
+				}
+			},
+		},
+	});
+}
+// === end OPPORTUNITY-SLIDER
+
 // === SCROLL DRUGGING BLOG
 if (document.getElementById("categoriesList")) {
 	const box = document.getElementById("categoriesList");
@@ -255,7 +280,6 @@ if (document.querySelector(".dropdown-toggle")) {
 					item.classList.add("slide");
 				}
 			}
-			
 		});
 	});
 }
@@ -304,17 +328,17 @@ if (document.querySelector(".jsReadMore")) {
 // === end READ MORE
 
 // === start TOGGLE SCROLL
-let disableScroll = function() {
-	let paddingOffset = window.innerWidth - document.body.offsetWidth + 'px';
-	document.body.classList.add('no-scroll');
+let disableScroll = function () {
+	let paddingOffset = window.innerWidth - document.body.offsetWidth + "px";
+	document.body.classList.add("no-scroll");
 	document.body.style.paddingRight = paddingOffset;
-}
+};
 
-let enableScroll = function() {
+let enableScroll = function () {
 	//let paddingOffset;
-	document.body.classList.remove('no-scroll');
+	document.body.classList.remove("no-scroll");
 	document.body.style.paddingRight = 0;
-}
+};
 // === end TOGGLE SCROLL
 
 // === start MODAL CALLBACK
@@ -470,24 +494,23 @@ if (document.querySelector(".drop-head")) {
 // === end TAB
 
 // === start FORMS actions
-if(document.querySelector('.form-ask')){
-	const form = document.querySelector('.form-ask');
-	const subBtn = form.querySelector('button');
+if (document.querySelector(".form-ask")) {
+	const form = document.querySelector(".form-ask");
+	const subBtn = form.querySelector("button");
 	const accept = form.querySelector('[name="userAccept"]');
 
-
-	subBtn.addEventListener('click', (e) => {
+	subBtn.addEventListener("click", (e) => {
 		e.preventDefault();
-		if(isAcceptChecked(accept)){
-			alert('Спасибо, что нажали!');
+		if (isAcceptChecked(accept)) {
+			alert("Спасибо, что нажали!");
 		} else {
-			alert('Ознакомьтесь с политикой безопасности');
+			alert("Ознакомьтесь с политикой безопасности");
 		}
 	});
 }
 function isAcceptChecked(el) {
 	let res = el.checked ? true : false;
-    return res;
+	return res;
 }
 
 // === end FORMS actions
@@ -540,16 +563,14 @@ if (document.querySelector(".thb") && document.querySelector(".tbc")) {
 // === end BLOG TAB
 
 // === start BLOG POSTLINK
-if(document.querySelector('.post-item')) {
-	const allPosts = document.querySelectorAll('.post-item[data-postlink]');
+if (document.querySelector(".post-item")) {
+	const allPosts = document.querySelectorAll(".post-item[data-postlink]");
 
-	allPosts.forEach( (post) => {
-		post.addEventListener('click', (e) => {
+	allPosts.forEach((post) => {
+		post.addEventListener("click", (e) => {
 			let link = e.currentTarget.dataset.postlink;
 			location.href = link;
 		});
 	});
-
 }
 // === end BLOG POSTLINK
-

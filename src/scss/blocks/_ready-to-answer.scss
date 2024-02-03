@@ -48,8 +48,6 @@
 		justify-content: space-between;
 		column-gap: 15px;
 
-		padding: 20px 0;
-
 		font-size: 20px;
 		font-style: normal;
 		font-weight: 500;
@@ -73,6 +71,7 @@
 		}
 
 		a {
+			padding: 20px 0;
 			max-width: 377px;
 			width: 100%;
 			@include mw1024 {
