@@ -335,7 +335,6 @@ let disableScroll = function () {
 };
 
 let enableScroll = function () {
-	//let paddingOffset;
 	document.body.classList.remove("no-scroll");
 	document.body.style.paddingRight = 0;
 };
@@ -359,7 +358,6 @@ if (document.querySelector(".callback-bg")) {
 		enableScroll();
 	});
 }
-
 // === end MODAL CALLBACK
 
 // === start MODAL SEARCH
@@ -495,36 +493,46 @@ if (document.querySelector(".drop-head")) {
 
 // === start FORMS handler
 if (document.querySelector(".jsForm")) {
-	const forms = document.querySelectorAll('.jsForm');
+	const forms = document.querySelectorAll(".jsForm");	
 
-forms.forEach( (form) => {
-    form.addEventListener('submit', sendFormData);
-});
+	forms.forEach((form) => {
+		form.addEventListener("submit", sendFormData);
+	});
 
-async function sendFormData (event) {
-    event.preventDefault();
+	async function sendFormData(event) {
+		event.preventDefault();
 
-    const myFormData = new FormData(event.target);
+		const myFormData = new FormData(event.target);
+		const fileField = event.target.querySelector('input[type="file"]');
 
-    if(myFormData.has('userAccept', 'on')) {
-        myFormData.set('subject', window.location.href);
-        myFormData.set('title', 'Задайте свой вопрос');
-        myFormData.delete('userAccept');
-    } else {
-        return console.log('error');
-    }
+		if (myFormData.has("userAccept", "on")) {
+			myFormData.set("subject", window.location.href);
+			myFormData.set("title", "Задайте свой вопрос");
+			myFormData.delete("userAccept");
+			if (myFormData.has("userLoad")) {
+				myFormData.append("userLoad", fileField.files[0]);
+			}
+		} else {
+			return console.log("error");
+		}
 
-    await fetch ('sender.php', {
-        method: 'POST',
-        body: myFormData
-    }).then((response) => {
-        console.log('response.status = ' + response.status);
-    }).catch( (error) => {
-        console.error(error)
-    });
+		await fetch("sender.php", {
+			method: "POST",
+			body: myFormData,
+		})
+			.then((response) => {
+				console.log("response.status = " + response.status);
+				if (response.status === 200 && document.querySelector(".callback-bg").classList.contains("show")) {
+					document.querySelector(".callback-bg").classList.remove("show");
+					enableScroll();
+				}
+			})
+			.catch((error) => {
+				console.error(error);
+			});
 
-    event.target.reset();
-}
+		event.target.reset();
+	}
 }
 // === end FORMS handler
 

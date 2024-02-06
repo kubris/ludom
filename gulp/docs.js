@@ -110,7 +110,7 @@ gulp.task("fonts:docs", function () {
 // === UPLOADS ===
 gulp.task('uploads:docs', function(){
 	return gulp.src('./src/uploads/**/*')
-		.pipe(imagemin({ verbose: true }))
+		//.pipe(imagemin({ verbose: true }))
 		.pipe(gulp.dest('./docs/uploads/'))
 });
 // === end UPLOADS ===
