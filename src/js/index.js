@@ -493,31 +493,40 @@ if (document.querySelector(".drop-head")) {
 }
 // === end TAB
 
-// === start FORMS actions
-if (document.querySelector(".form-ask")) {
-	const forms = document.querySelectorAll(".form-ask");
-	//const subBtn = form.querySelector("button");
-	//const accept = form.querySelector('[name="userAccept"]');
+// === start FORMS handler
+if (document.querySelector(".jsForm")) {
+	const forms = document.querySelectorAll('.jsForm');
 
-	forms.forEach((item) => {
-		const subBtn = item.querySelector("button");
-		const accept = item.querySelector('[name="userAccept"]');
-		subBtn.addEventListener("click", (e) => {
-			e.preventDefault();
-			if (isAcceptChecked(accept)) {
-				alert("Спасибо, что нажали!");
-			} else {
-				alert("Ознакомьтесь с политикой безопасности");
-			}
-		});
-	});
-}
+forms.forEach( (form) => {
+    form.addEventListener('submit', sendFormData);
+});
 
-function isAcceptChecked(el) {
-	let res = el.checked ? true : false;
-	return res;
+async function sendFormData (event) {
+    event.preventDefault();
+
+    const myFormData = new FormData(event.target);
+
+    if(myFormData.has('userAccept', 'on')) {
+        myFormData.set('subject', window.location.href);
+        myFormData.set('title', 'Задайте свой вопрос');
+        myFormData.delete('userAccept');
+    } else {
+        return console.log('error');
+    }
+
+    await fetch ('sender.php', {
+        method: 'POST',
+        body: myFormData
+    }).then((response) => {
+        console.log('response.status = ' + response.status);
+    }).catch( (error) => {
+        console.error(error)
+    });
+
+    event.target.reset();
 }
-// === end FORMS actions
+}
+// === end FORMS handler
 
 // === start BLOG TAB
 const fadeIn = (el, timeout, display) => {

@@ -105,6 +105,14 @@ gulp.task('uploads:dev', function(){
 });
 // === end UPLOADS ===
 
+// === ROOT FOLDER files ===
+gulp.task('root:dev', function(){
+	return gulp.src('./src/*.+(ico|php|htaccess|txt)')
+		.pipe(changed('./build/'))
+		.pipe(gulp.dest('./build/'))
+});
+// === end ROOT FOLDER files ===
+
 // === JS ===
 gulp.task('js:dev', function(){
 	return gulp
@@ -132,6 +140,7 @@ gulp.task('watch:dev', function(){
 	gulp.watch('./src/images/**/*', gulp.parallel('images:dev'));
 	//gulp.watch('./src/fonts/**/*', gulp.parallel('fonts:dev'));
 	gulp.watch('./src/uploads/**/*', gulp.parallel('uploads:dev'));
+	gulp.watch('./src/*.+(ico|php|htaccess|txt)', gulp.parallel('root:dev'));
 	gulp.watch('./src/js/**/*.js', gulp.parallel('js:dev'));
 });
 // === end WATCH ===

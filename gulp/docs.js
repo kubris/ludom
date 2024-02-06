@@ -115,6 +115,13 @@ gulp.task('uploads:docs', function(){
 });
 // === end UPLOADS ===
 
+// === ROOT FOLDER files ===
+gulp.task('root:docs', function(){
+	return gulp.src('./src/*.+(ico|php|htaccess|txt)')
+		.pipe(gulp.dest('./docs/'))
+});
+// === end ROOT FOLDER files ===
+
 // === JS ===
 gulp.task("js:docs", function () {
 	return gulp
