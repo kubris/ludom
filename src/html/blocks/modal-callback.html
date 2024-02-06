@@ -10,23 +10,22 @@
 		</p>
 		<form class="jsForm">
 			<label>
-				<input type="text"  name="user" placeholder="Имя">
+				<input type="text" name="userName" placeholder="Имя">
 			</label>
 			<label>
-				<input type="tel"  name="phone" placeholder="Телефон">
+				<input type="tel" name="userPhone" placeholder="Телефон">
 			</label>
-			<textarea name="message" placeholder="Сообщение"></textarea>
-
-			<label>
-				<input class="v-hidden" type="checkbox"  name="accept" required>
+			<textarea name="userMessage" placeholder="Сообщение"></textarea>
+			<label class="form-ask__accept">
+				<input class="v-hidden" type="checkbox" name="userAccept" required>
 				<span class="accept">
-					Ознакомлен и согласен с политикой обработки персональных данных
+					Ознакомлен и согласен с <a href="error-404.html">политикой обработки</a> персональных данных
 				</span>
 			</label>
+			<button class="btn btn--blue btn--big" type="submit">Отправить</button>
+		</form>	
 
-			<button type="submit" class="btn btn--blue btn--big jsSubmit">
-				Отправить</button>
-		</form>
+
 	</div>
 </div>
 <!----- end modal callback ------->

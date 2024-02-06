@@ -86,11 +86,9 @@
 
 	.accept {
 		position: relative;
-		display: flex;
-		align-items: flex-start;
 		margin: 15px 0 30px;
 		padding-left: 28px;
-		@include mw768 {font-size: 14px}
+		font-size: 14px;
 
 		&::before {
 			content: '';
@@ -118,12 +116,16 @@
 		&:focus::before {
 			box-shadow: 0 0 5px var(--gray600);
 		}
+
+		& > a:hover {
+			text-decoration: underline;
+		}
 	}
 
-	input[name=accept]:checked + .accept::before {
+	input[type=checkbox]:checked + .accept::before {
 		background-color: var(--accent);
 	}
-	input[name=accept]:checked + .accept::after {
+	input[type=checkbox]:checked + .accept::after {
 		content: '';
 
 	}
