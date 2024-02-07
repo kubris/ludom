@@ -60,14 +60,9 @@
 		}
 	}
 	&-block {
+		margin-bottom: 50px;
 		color: var(--dark);
-		height: 595px;
-		@include mw1440 {
-			height: 539px;
-		}
-		@include mw1024 {
-			height: auto;
-		}
+		@include mw1024 {margin-bottom: 0}
 
 		h1 {
 			margin: 50px 0 20px;
@@ -117,6 +112,9 @@
 			text-transform: uppercase;
 			@include mw1024 {
 				font-size: 38px;
+			}
+			@include mw768 {
+				font-size: 28px;
 			}
 		}
 	}

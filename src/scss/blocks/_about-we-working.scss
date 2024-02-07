@@ -7,6 +7,10 @@
 		@include mw1024 {
 			grid-template-columns: repeat(2, 1fr);
 			grid-template-rows: auto;
+			grid-gap: 20px;
+		}
+		@include mw768 {
+			grid-gap: 15px;
 		}
 	}
 	&-cell {
@@ -40,6 +44,7 @@
 			font-size: 16px;
 			font-weight: 600;
 			line-height: 130%;
+			word-break: break-word;
 		}
 		&__times {
 			margin: 20px 0;

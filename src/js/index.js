@@ -94,6 +94,7 @@ if (document.querySelector(".opportunity-slider")) {
 	if (window.innerWidth > 767) {
 		const sliderLazy = new Swiper(".opportunity-slider", {
 			slidesPerView: 2,
+			slidesPerGroup: 2,
 			spaceBetween: 20,
 
 			navigation: {
@@ -107,6 +108,7 @@ if (document.querySelector(".opportunity-slider")) {
 				},
 				1024: {
 					slidesPerView: 3,
+					slidesPerGroup: 3,
 				},
 			},
 		});
@@ -114,7 +116,7 @@ if (document.querySelector(".opportunity-slider")) {
 }
 // === end OPPORTUNITY-SLIDER
 
-// === SLIDER OPPORTUNITY-SLIDER
+// === SLIDER our-projects__gallery
 if (document.querySelector(".our-projects__gallery")) {
 	const sliderOnMobile = new Swiper(".our-projects__gallery", {
 		slidesPerView: 2.2,
@@ -137,7 +139,7 @@ if (document.querySelector(".our-projects__gallery")) {
 		},
 	});
 }
-// === end OPPORTUNITY-SLIDER
+// === end our-projects__gallery
 
 // === SCROLL DRUGGING BLOG
 if (document.getElementById("categoriesList")) {

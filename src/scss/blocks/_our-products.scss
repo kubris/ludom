@@ -1,11 +1,14 @@
 // -- our-products
 .our-products {
-
 	&__btn {
 		margin-top: 60px;
 		text-align: center;
-		@include mw1024 {margin-top: 50px}
-		@include mw768 {margin-top: 30px}
+		@include mw1024 {
+			margin-top: 50px;
+		}
+		@include mw768 {
+			margin-top: 30px;
+		}
 	}
 }
 
@@ -15,6 +18,15 @@
 		grid-template-columns: repeat(12, 1fr);
 		grid-template-rows: repeat(3, 1fr);
 		grid-gap: 30px 20px;
+
+		@include mw1024 {
+			grid-template-columns: 1fr 1fr;
+			grid-template-rows: auto;
+			grid-gap: 20px;
+		}
+		@include mw768 {
+			grid-gap: 15px;
+		}
 	}
 
 	&-item {
@@ -45,12 +57,32 @@
 			grid-column: 6 / 13;
 			grid-row: 3 / 4;
 		}
+		@include mw1024 {
+			&:nth-child(n) {
+				grid-column: auto;
+				grid-row: auto;
+				padding: 20px;
+			}
+		}
+		@include mw768 {
+			&:nth-child(n) {
+				padding: 0;
+			}
+		}
 
 		&__link {
 			position: absolute;
 			top: 30px;
 			right: 30px;
 			transition: transform 0.2s ease-in-out;
+			@include mw1024 {
+				top: 20px;
+				right: 20px;
+			}
+			@include mw768 {
+				display: none;
+			}
+
 			&:hover {
 				transform: scale(0.85);
 			}
@@ -66,6 +98,13 @@
 			align-items: center;
 			justify-content: space-between;
 			height: 100%;
+			@include mw1024 {
+				display: flex;
+				flex-direction: column-reverse;
+			}
+			@include mw768 {
+				padding-bottom: 10px;
+			}
 
 			& > img {
 				height: 100%;
@@ -74,6 +113,14 @@
 
 			span {
 				align-self: start;
+				@include mw1024 {
+					min-height: 40px;
+				}
+				@include mw768 {
+					padding: 10px 10px 0 10px;
+					font-size: 16px;
+					line-height: 130%;
+				}
 			}
 		}
 	}
