@@ -495,47 +495,227 @@ if (document.querySelector(".drop-head")) {
 
 // === start FORMS handler
 if (document.querySelector(".jsForm")) {
-	const forms = document.querySelectorAll(".jsForm");	
+	const forms = document.querySelectorAll(".jsForm");
 
 	forms.forEach((form) => {
 		form.addEventListener("submit", sendFormData);
+
+		const fields = form.querySelectorAll("[data-validate]");
+		fields.forEach((field) => {
+			field.addEventListener("focusout", (e) => {
+				validation(form);
+			});
+		});
 	});
 
 	async function sendFormData(event) {
 		event.preventDefault();
 
-		const myFormData = new FormData(event.target);
-		const fileField = event.target.querySelector('input[type="file"]');
+		if (validation(this) === true) {
+			console.log("Validation TRUE");
 
-		if (myFormData.has("userAccept", "on")) {
-			myFormData.set("subject", window.location.href);
-			myFormData.set("title", "Задайте свой вопрос");
-			myFormData.delete("userAccept");
-			if (myFormData.has("userLoad")) {
-				myFormData.append("userLoad", fileField.files[0]);
-			}
-		} else {
-			return console.log("error");
-		}
+			const myFormData = new FormData(event.target);
+			const fileField = event.target.querySelector('input[type="file"]');
 
-		await fetch("sender.php", {
-			method: "POST",
-			body: myFormData,
-		})
-			.then((response) => {
-				console.log("response.status = " + response.status);
-				if (response.status === 200 && document.querySelector(".callback-bg").classList.contains("show")) {
-					document.querySelector(".callback-bg").classList.remove("show");
-					enableScroll();
+			if (myFormData.has("userAccept", "on")) {
+				myFormData.set("subject", window.location.href);
+				myFormData.set("title", "Задайте свой вопрос");
+				myFormData.delete("userAccept");
+				if (myFormData.has("userLoad")) {
+					myFormData.append("userLoad", fileField.files[0]);
 				}
-			})
-			.catch((error) => {
-				console.error(error);
-			});
+			} else {
+				return console.log("error");
+			}
 
-		event.target.reset();
+			await fetch("sender.php", {
+				method: "POST",
+				body: myFormData,
+			})
+				.then((response) => {
+					console.log("response.status = " + response.status);
+					if (response.status === 200 && document.querySelector(".callback-bg").classList.contains("show")) {
+						document.querySelector(".callback-bg").classList.remove("show");
+						enableScroll();
+					}
+				})
+				.catch((error) => {
+					console.error(error);
+				});
+
+			event.target.reset();
+		} else {
+			console.log("Validation FALSE");
+		}
 	}
 }
+
+// -- form validation
+function validation(form) {
+	delFormError(form);
+	let result = true;
+
+	const fieldsToValidate = form.querySelectorAll("[data-validate]");
+
+	fieldsToValidate.forEach((field) => {
+		const fieldType = field.type;
+		switch (fieldType) {
+			case "text": {
+				if (validateTextField(field)) {
+					field.value = convertHTML(field.value);
+				} else {
+					result = false;
+				}
+				break;
+			}
+			case "tel": {
+				if (!validateTelField(field)) {
+					result = false;
+				}
+				break;
+			}
+			case "email": {
+				if (!validateEmailField(field)) {
+					result = false;
+				}
+				break;
+			}
+			case "textarea": {
+				if (validateAreaField(field)) {
+					field.value = convertHTML(field.value);
+				} else {
+					result = false;
+				}
+				break;
+			}
+			case "checkbox": {
+				if (!validateCheckboxField(field)) {
+					result = false;
+				}
+				break;
+			}
+		}
+	});
+	return result;
+}
+
+// -- validate field errors
+const listErrors = ["Поле долно быть заполнено", "Необходимо ввести корректные данные", "Скрипты и ссылки недопустимы в этом поле"];
+
+// -- validate text field
+function validateTextField(el) {
+	if (el.value === "") {
+		addFormError(el, listErrors[0]);
+		return false;
+	} else {
+		return true;
+	}
+}
+
+// -- validate tel field
+function validateTelField(el) {
+	let res = true;
+	let tl = el.value;
+	if (tl === "") {
+		addFormError(el, listErrors[0]);
+		res = false;
+	} else if (validateTel(tl) === null) {
+		addFormError(el, listErrors[1]);
+		res = false;
+	}
+	return res;
+}
+
+// -- validate email field
+function validateEmailField(el) {
+	let res = true;
+	let mail = el.value;
+	if (mail == "") {
+		addFormError(el, listErrors[0]);
+		res = false;
+	} else if (validateEmail(mail) === null) {
+		addFormError(el, listErrors[1]);
+		res = false;
+	}
+	return res;
+}
+
+// -- validate textarea field
+function validateAreaField(el) {
+	let res = true;
+	if (el.value.length < 1) {
+		addFormError(el, listErrors[0]);
+		res = false;
+	}
+	return res;
+}
+
+// -- validate checkbox field
+function validateCheckboxField(el) {
+	let res = true;
+	if (el.checked == false) {
+		addFormError(el, "");
+		res = false;
+	}
+	return res;
+}
+// ================================
+// -- convert tags to text
+function convertHTML(str) {
+	const htmlEntities = {
+		"<": "&lt;",
+		">": "&gt;",
+		'"': "&quot;",
+		"'": "&apos;",
+		"=": "&#x3d;",
+	};
+	return str.replace(/([<>\"'\=])/g, (match) => htmlEntities[match]);
+}
+
+// -- check tel
+const validateTel = (t) => {
+	return t.match(
+		/^((8|\+7)[\- ]?)?\(?\d{3,5}\)?[\- ]?\d[\- ]?\d[\- ]?\d[\- ]?\d[\- ]?\d(([\- ]?\d)?[\- ]?\d)?$/
+		);
+};
+
+// -- check email
+const validateEmail = (email) => {
+	return email.match(
+		/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+	);
+};
+
+// -- form add error message
+function addFormError(el, errMsg = "") {
+	let parent = el.closest("label");
+	parent.classList.add("error-valid");
+
+	if (errMsg) {
+		let span = document.createElement("span");
+		span.classList.add("error-msg");
+		span.innerText = errMsg;
+		parent.insertBefore(span, parent.children[0]);
+	}
+}
+
+// -- form delete error message
+function delFormError(f) {
+	const fieldsToValidate = f.querySelectorAll("[data-validate]");
+	let parent;
+
+	fieldsToValidate.forEach((el) => {
+		parent = el.closest("label");
+
+		if (parent.classList.contains("error-valid")) {
+			parent.classList.remove("error-valid");
+		}
+		if (parent.children[0].classList.contains("error-msg")) {
+			parent.children[0].remove();
+		}
+	});
+}
+
 // === end FORMS handler
 
 // === start BLOG TAB
