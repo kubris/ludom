@@ -8,16 +8,18 @@
 		<p>
 			Оставьте контактные данные, чтобы мы связались с вами 
 		</p>
-		<form class="jsForm">
+		<form class="form-mobile jsForm">
 			<label>
-				<input type="text" name="userName" placeholder="Имя">
+				<input type="text" name="userName" placeholder="Имя" data-validate>
 			</label>
 			<label>
-				<input type="tel" name="userPhone" placeholder="Телефон">
+				<input type="tel" name="userPhone" placeholder="Телефон" data-validate>
 			</label>
-			<textarea name="userMessage" placeholder="Сообщение"></textarea>
+			<label>
+				<textarea name="userMessage" placeholder="Сообщение*" data-validate></textarea>
+			</label>
 			<label class="form-ask__accept">
-				<input class="v-hidden" type="checkbox" name="userAccept" required>
+				<input class="v-hidden" type="checkbox" name="userAccept" data-validate>
 				<span class="accept">
 					Ознакомлен и согласен с <a href="error-404.html">политикой обработки</a> персональных данных
 				</span>

@@ -98,7 +98,39 @@
 	}
 }
 
-form {
+form.jsForm {
+	input[type="text"],
+	input[type="tel"],
+	textarea {
+		color: var(--gray600);
+		border: 1px solid var(--gray600);
+		background-color: var(--white);
+
+		&:valid {
+			color: var(--dark);
+			border: 1px solid var(--dark);
+		}
+
+		&::placeholder {
+			color: var(--gray600);
+		}
+
+		&:focus {
+			color: var(--dark);
+			border: 1px solid var(--dark);
+
+			&::placeholder {
+				color: var(--dark);
+			}
+		}
+
+		&:disabled {
+			color: var(--gray600);
+			border: 1px solid var(--gray600);
+			background-color: var(--gray200);
+		}
+	}
+
 	.error-valid {
 		color: var(--red);
 
@@ -119,39 +151,8 @@ form {
 		line-height: 120%;
 		color: var(--red);
 	}
-}
-input[type="text"],
-input[type="tel"],
-textarea {
-	color: var(--gray600);
-	border: 1px solid var(--gray600);
-	background-color: var(--white);
 
-	&:valid {
-		color: var(--dark);
-		border: 1px solid var(--dark);
+	textarea {
+		resize: none;
 	}
-
-	&::placeholder {
-		color: var(--gray600);
-	}
-
-	&:focus {
-		color: var(--dark);
-		border: 1px solid var(--dark);
-
-		&::placeholder {
-			color: var(--dark);
-		}
-	}
-
-	&:disabled {
-		color: var(--gray600);
-		border: 1px solid var(--gray600);
-		background-color: var(--gray200);
-	}
-}
-
-textarea {
-	resize: none;
 }
