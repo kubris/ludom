@@ -3,7 +3,7 @@
 $name    =  trim(htmlentities($_POST['userName']));
 $tel 	 =  trim(htmlentities($_POST['userPhone']));
 $text 	 =  trim(htmlentities($_POST['userMessage']));
-$to      = "kubris.pro@gmail.com";
+$to      = "info@ludommodul.ru";
 
 $EOL = "\r\n";
 $boundary     = "--".md5(uniqid(time()));
@@ -15,7 +15,7 @@ foreach ($_POST as $key => $value ) { $message .= "$key : $value" . $EOL; }
 
 $headers    = "MIME-Version: 1.0;" . $EOL . "";
 $headers   .= "Content-Type: multipart/mixed; boundary=\"" . $boundary . "\"" . $EOL . "";
-$headers   .= "From: info@ludommodul.ru/";
+$headers   .= "From: info@ludommodul.ru";
 
 $multipart  = "--" . $boundary . $EOL;
 $multipart .= "Content-Type: text/html; charset=utf-8" . $EOL . "";
