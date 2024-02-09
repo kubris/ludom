@@ -156,3 +156,37 @@ form.jsForm {
 		resize: none;
 	}
 }
+
+.callback-thx {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	gap: 5px;
+
+	margin: 0 15px;
+	padding: 10px 30px;
+	max-width: 800px;
+	width: 100%;
+	background-color: #fff;
+	border: 15px solid var(--accent);
+
+	& span {
+		display: inline-flex;
+		&:nth-child(1) {
+			font-size: 26px;
+			font-weight: 600;
+			text-transform: uppercase;
+			color: var(--dark);
+		}
+		&:nth-child(2) {
+			font-size: 22px;
+			color: var(--gray600);
+		}
+	}
+}

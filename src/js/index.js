@@ -494,6 +494,15 @@ if (document.querySelector(".drop-head")) {
 // === end TAB
 
 // === start FORMS handler
+
+// -- thx for sending form
+function messageSent(frm) {
+	let div = document.createElement("div");
+	div.className = "callback-thx";
+	div.innerHTML = "<span>Сообщение отправлено!</span>" + "<span>Спасибо за обращение в нашу компанию!</span>";
+	frm.append(div);
+}
+
 if (document.querySelector(".jsForm")) {
 	const forms = document.querySelectorAll(".jsForm");
 
@@ -512,7 +521,7 @@ if (document.querySelector(".jsForm")) {
 		event.preventDefault();
 
 		if (validation(this) === true) {
-			console.log("Validation TRUE");
+			console.log("Validation started");
 
 			const myFormData = new FormData(event.target);
 			const fileField = event.target.querySelector('input[type="file"]');
@@ -525,7 +534,7 @@ if (document.querySelector(".jsForm")) {
 					myFormData.append("userLoad", fileField.files[0]);
 				}
 			} else {
-				return console.log("error");
+				return console.warn("Error form data loading..");
 			}
 
 			await fetch("sender.php", {
@@ -533,10 +542,20 @@ if (document.querySelector(".jsForm")) {
 				body: myFormData,
 			})
 				.then((response) => {
-					console.log("response.status = " + response.status);
-					if (response.status === 200 && document.querySelector(".callback-bg").classList.contains("show")) {
-						document.querySelector(".callback-bg").classList.remove("show");
-						enableScroll();
+					if (response.status === 200) {
+						if (document.querySelector(".callback-bg").classList.contains("show")) {
+							messageSent(this);
+							setTimeout(() => {
+								document.querySelector(".callback-bg").classList.remove("show");
+								enableScroll();
+								document.querySelector(".callback-thx").remove();
+							}, 2600);
+						} else {
+							messageSent(this);
+							setTimeout(() => {
+								document.querySelector(".callback-thx").remove();
+							}, 2600);
+						}
 					}
 				})
 				.catch((error) => {
@@ -548,6 +567,15 @@ if (document.querySelector(".jsForm")) {
 			console.log("Validation FALSE");
 		}
 	}
+}
+
+if(document.querySelector("input[type=file]")) {
+	const files = document.querySelectorAll("input[type=file]");
+	files.forEach((file) => {
+		file.addEventListener("change", (e) => {
+			file.closest('form').querySelector('.download-label').textContent = file.files[0].name;
+		});
+	});
 }
 
 // -- form validation
@@ -674,9 +702,7 @@ function convertHTML(str) {
 
 // -- check tel
 const validateTel = (t) => {
-	return t.match(
-		/^((8|\+7)[\- ]?)?\(?\d{3,5}\)?[\- ]?\d[\- ]?\d[\- ]?\d[\- ]?\d[\- ]?\d(([\- ]?\d)?[\- ]?\d)?$/
-		);
+	return t.match(/^((8|\+7)[\- ]?)?\(?\d{3,5}\)?[\- ]?\d[\- ]?\d[\- ]?\d[\- ]?\d[\- ]?\d(([\- ]?\d)?[\- ]?\d)?$/);
 };
 
 // -- check email
