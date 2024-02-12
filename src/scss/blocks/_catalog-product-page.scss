@@ -101,6 +101,8 @@
 	}
 
 	.breadcrumbs {
+		position: relative;
+		z-index: 1;
 		margin-bottom: -35px;
 		padding-top: 30px;
 		@include mw1024 {

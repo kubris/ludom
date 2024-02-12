@@ -59,7 +59,7 @@ gulp.task('clean:dev', function(callback){
 // ////////////////////////
 // === HTML include  ===
 gulp.task('html:dev', function(){
-	return gulp.src(['./src/html/**/*.html', '!./src/html/blocks/*.html'])
+	return gulp.src(['./src/html/**/*.html', '!./src/html/blocks/**/*.html'])
 		.pipe(changed('./src/'),{hasChanged: changed.compareContents})
 		.pipe(plumber(plumberNotify('HTML')))
 		.pipe(fileInclude(fileIncludeSettings))

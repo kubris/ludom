@@ -1,0 +1,42 @@
+<!--------- start likes-project --------->
+<section class="likes-project offset">
+	<div class="container">
+		<div class="likes-project__wrapper">
+			<div class="likes-project__content">
+				<h2>Понравился один из <span class="accent-color">проектов?</span></h2>
+				<p>
+					Если вам нужен проект, как на одной из фотографий выше или похожий проект с изменениями, оставьте свою контактную информацию. В ближайшее время с вами свяжется наш сотрудник, чтобы обсудить понравившийся проект или изменить его под ваши задачи.
+				</p>
+				<p>
+					Вы можете добавить изображение проекта, который вам нравится или планировки, которая подходит по функционалу. Или у вас есть коммерческое
+					предложение, которое хотите изменить или реализовать с более низким бюджетом.
+				</p>
+			</div>
+			<div class="likes-project__form">
+				<form class="form-ask jsForm" enctype="multipart/form-data">
+					<label>
+						<input type="text" name="userName" placeholder="Имя" required data-validate>
+					</label>
+					<label>
+						<input type="tel" name="userPhone" placeholder="Телефон" required  data-validate >
+					</label>
+					<label>
+						<textarea name="userMessage" placeholder="Сообщение*" data-validate></textarea>
+					</label>
+					<label class="form-ask__accept">
+						<input type="checkbox" name="userAccept" required  data-validate >
+						Ознакомлен и согласен с политикой обработки персональных данных
+					</label>
+					<label class="form-ask__download">
+						<input type="file" name="userLoad" />
+						<img src="../images/svg/arrow-up-circle.svg" />
+						<span class="accent-hover download-label">Загрузить файл</span>
+					</label>
+					<button class="btn btn--blue btn--big btn--wide-mobile" type="submit">Отправить</button>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- //.container-->
+</section>
+<!--------- end likes-project ----------->

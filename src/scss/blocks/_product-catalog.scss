@@ -14,7 +14,7 @@
 	}
 
 	&__aside {
-		width: 380px;
+		min-width: clamp(320px, 20vw, 380px);
 		color: var(--dark);
 		@include mw1024 {
 			display: none;
