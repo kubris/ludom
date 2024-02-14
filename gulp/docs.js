@@ -63,7 +63,7 @@ gulp.task("clean:docs", function (callback) {
 // === HTML include  ===
 gulp.task("html:docs", function () {
 	return gulp
-		.src(["./src/html/**/*.html", "!./src/html/blocks/*.html"])
+		.src(["./src/html/**/*.html", "!./src/html/blocks/**/*.html"])
 		.pipe(plumber(plumberNotify("HTML")))
 		.pipe(fileInclude(fileIncludeSettings))
 		//.pipe(webpHTML())
