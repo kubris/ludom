@@ -5,7 +5,7 @@
 
 	&-wrapper {
 		display: flex;
-		margin-top: 80px;
+		padding: 20px;
 		@include mw1024 {
 			margin-top: 60px;
 			flex-direction: column;
@@ -34,6 +34,8 @@
 			@include mw768 {font-size: 16px}
 		}
 		img {
+			display: block;
+			width: 100%;
 			@include mw768 {
 				width: 320px;
 			}

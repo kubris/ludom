@@ -317,6 +317,43 @@ if (document.querySelector(".product-catalog__filter-toggle")) {
 }
 // === end ASIDE MENU DROPDOWN
 
+// === start ASIDE MENU Active	===
+if (document.querySelector(".aside-grid__item")) {
+	const asideMenuItems = document.querySelectorAll(".aside-grid__item");
+
+	asideMenuItems.forEach( (item) => {
+		item.addEventListener("click", (e) => {
+			e.currentTarget.classList.add("active");
+		});
+	});
+}
+
+document.addEventListener("DOMContentLoaded", function(){
+    if (document.querySelector(".aside-grid__item")) {
+		let prodName = document.querySelector(".product-grid").dataset.grid;
+		const asideNames = document.querySelectorAll('.aside-grid__item');
+		let filterMobileCaption = document.querySelector('.product-catalog__filter-toggle span');
+
+		delPastActiveAsideItem(asideNames, prodName);
+
+		asideNames.forEach((item) => {
+			if(item.dataset.grid === prodName){
+				item.classList.add('active');
+				filterMobileCaption.innerText = item.querySelector('span a').innerText;
+			}
+		});
+	}
+});
+
+function delPastActiveAsideItem(elems, name) {
+	elems.forEach((el) => {
+		if(el.classList.contains('active')){
+			el.classList.remove('active');
+		}
+	});
+}
+// === end ASIDE MENU Active
+
 // === start READ MORE
 if (document.querySelector(".jsReadMore")) {
 	const readMoreBtns = document.querySelectorAll(".jsReadMore");

@@ -1,295 +1,137 @@
-<!--------- start product-catalog --------->
+<!-- ------- start product-catalog ------- -->
 <section class="category-catalog offset product-catalog-section">
 	<div class="container">
-		<!----- start product-catalog ----->
 		<div class="product-catalog">
-			<!-- start product-catalog__aside -->
+
 			<div class="product-catalog__aside">
-				<ul class="aside-grid">
-					<li class="aside-grid__item active">
-						<span>
-							<a href="our-projects.html">Все проекты</a>
-							<i class="drop-link">
-								<img src="images/svg/chevron-up.svg" />
-							</i>
-						</span>
-					</li>
-
-					<li class="aside-grid__item">
-						<span>
-							<a href="catalog-product.html">Киоски</a>
-							<i class="drop-link">
-								<img src="images/svg/chevron-up.svg" />
-							</i>
-						</span>
-					</li>
-
-					<li class="aside-grid__item">
-						<span>
-							<a href="catalog-product.html">Офисные здания</a>
-							<i class="drop-link">
-								<img src="images/svg/chevron-up.svg" />
-							</i>
-						</span>
-					</li>
-
-					<li class="aside-grid__item">
-						<span>
-							<a href="catalog-product.html">Временные жилые модули</a>
-							<i class="drop-link">
-								<img src="images/svg/chevron-up.svg" />
-							</i>
-						</span>
-					</li>
-
-					<li class="aside-grid__item">
-						<span>
-							<a href="catalog-product.html">Отели</a>
-							<i class="drop-link">
-								<img src="images/svg/chevron-up.svg" />
-							</i>
-						</span>
-					</li>
-
-					<li class="aside-grid__item">
-						<span>
-							<a href="catalog-product.html">Жилые дома</a>
-							<i class="drop-link">
-								<img src="images/svg/chevron-up.svg" />
-							</i>
-						</span>
-					</li>
-
-					<li class="aside-grid__item">
-						<span>
-							<a href="catalog-product.html">Передвижные дома</a>
-							<i class="drop-link">
-								<img src="images/svg/chevron-up.svg" />
-							</i>
-						</span>
-					</li>
-
-					<li class="aside-grid__item">
-						<span>
-							<a href="catalog-product.html">Торговые павильоны</a>
-							<i class="drop-link">
-								<img src="images/svg/chevron-up.svg" />
-							</i>
-						</span>
-					</li>
-
-					<li class="aside-grid__item">
-						<span>
-							<a href="catalog-product.html">Рестораны и кафе</a>
-							<i class="drop-link">
-								<img src="images/svg/chevron-up.svg" />
-							</i>
-						</span>
-					</li>
-				</ul>
+				@@include('project-blocks/project-aside.html')
 			</div>
-			<!-- end product-catalog__aside -->
 
-			<!-- start product-catalog__content -->
 			<div class="our-projects product-catalog__content">
 				<div class="product-catalog__filter-toggle">
 					<span>Все проекты</span>
-					<img src="images/svg/chevron-up.svg" />
+					<img src="/images/svg/chevron-up.svg" />
 				</div>
 
-				<ul class="aside-grid__filter-mobile">
-					<li class="aside-grid__item">
-						<span>
-							<a href="catalog-product.html">Все проекты</a>
-							<i class="drop-link">
-								<img src="images/svg/chevron-up.svg" />
-							</i>
-						</span>
-					</li>
+				@@include('project-blocks/project-filter-mobile.html')
 
-					<li class="aside-grid__item">
-						<span>
-							<a href="catalog-product.html">Киоски</a>
-							<i class="drop-link">
-								<img src="images/svg/chevron-up.svg" />
-							</i>
-						</span>
-					</li>
+				<div class="product-grid our-projects-grid" data-grid="prj-all">
 
-					<li class="aside-grid__item">
-						<span>
-							<a href="catalog-product.html">Офисные здания</a>
-							<i class="drop-link">
-								<img src="images/svg/chevron-up.svg" />
-							</i>
-						</span>
-					</li>
-
-					<li class="aside-grid__item">
-						<span>
-							<a href="catalog-product.html">Временные жилые модули</a>
-							<i class="drop-link">
-								<img src="images/svg/chevron-up.svg" />
-							</i>
-						</span>
-					</li>
-
-					<li class="aside-grid__item">
-						<span>
-							<a href="catalog-product.html">Отели</a>
-							<i class="drop-link">
-								<img src="images/svg/chevron-up.svg" />
-							</i>
-						</span>
-					</li>
-
-					<li class="aside-grid__item">
-						<span>
-							<a href="catalog-product.html">Жилые дома</a>
-							<i class="drop-link">
-								<img src="images/svg/chevron-up.svg" />
-							</i>
-						</span>
-					</li>
-
-					<li class="aside-grid__item">
-						<span>
-							<a href="catalog-product.html">Передвижные дома</a>
-							<i class="drop-link">
-								<img src="images/svg/chevron-up.svg" />
-							</i>
-						</span>
-					</li>
-
-					<li class="aside-grid__item">
-						<span>
-							<a href="catalog-product.html">Торговые павильоны</a>
-							<i class="drop-link">
-								<img src="images/svg/chevron-up.svg" />
-							</i>
-						</span>
-					</li>
-
-					<li class="aside-grid__item">
-						<span>
-							<a href="catalog-product.html">Рестораны и кафе</a>
-							<i class="drop-link">
-								<img src="images/svg/chevron-up.svg" />
-							</i>
-						</span>
-					</li>
-				</ul>
-
-				<div class="product-grid our-projects-grid">
-					<div class="product-grid__item">
-						<a href="project-page.html" class="product-grid__item-img">
-							<img src="uploads/our-projects/our1.jpg" alt="Билетная касса" />
+					<div class="product-grid__item" >
+						<a href="/project-page.html" class="product-grid__item-img">
+							<img src="/uploads/our-projects/our1.jpg" alt="Билетная касса" />
 						</a>
 						<h3>Билетная касса</h3>
 						<a class="card-more" href="project-page.html">
 							<span>Подробнее о проекте</span>
-							<img src="images/svg/arrow-diag.svg" alt="Подробнее о проекте">
+							<img src="/images/svg/arrow-diag.svg" alt="Подробнее о проекте">
 						</a>
 					</div>
+
 					<div class="product-grid__item">
 						<a href="project-page.html" class="product-grid__item-img">
-							<img src="uploads/our-projects/our2.jpg" alt="Офис продаж" />
+							<img src="/uploads/our-projects/our2.jpg" alt="Офис продаж" />
 						</a>
 						<h3>Офис продаж</h3>
 						<a class="card-more" href="project-page.html">
 							<span>Подробнее о проекте</span>
-							<img src="images/svg/arrow-diag.svg" alt="Подробнее о проекте">
+							<img src="/images/svg/arrow-diag.svg" alt="Подробнее о проекте">
 						</a>
 					</div>
+
 					<div class="product-grid__item">
 						<a href="project-page.html" class="product-grid__item-img">
-							<img src="uploads/our-projects/our3.jpg" alt="Торговый павильон" />
+							<img src="/uploads/our-projects/our3.jpg" alt="Торговый павильон" />
 						</a>
 						<h3>Торговый павильон</h3>
 						<a class="card-more" href="project-page.html">
 							<span>Подробнее о проекте</span>
-							<img src="images/svg/arrow-diag.svg" alt="Подробнее о проекте">
+							<img src="/images/svg/arrow-diag.svg" alt="Подробнее о проекте">
 						</a>
 					</div>
+
 					<div class="product-grid__item">
 						<a href="project-page.html" class="product-grid__item-img">
-							<img src="uploads/our-projects/our4.jpg" alt="Модульное кафе" />
+							<img src="/uploads/our-projects/our4.jpg" alt="Модульное кафе" />
 						</a>
 						<h3>Модульное кафе</h3>
 						<a class="card-more" href="project-page.html">
 							<span>Подробнее о проекте</span>
-							<img src="images/svg/arrow-diag.svg" alt="Подробнее о проекте">
+							<img src="/images/svg/arrow-diag.svg" alt="Подробнее о проекте">
 						</a>
 					</div>
+
 					<div class="product-grid__item">
 						<a href="project-page.html" class="product-grid__item-img">
-							<img src="uploads/our-projects/our5.jpg" alt="Модульный жилой дом" />
+							<img src="/uploads/our-projects/our5.jpg" alt="Модульный жилой дом" />
 						</a>
 						<h3>Модульный жилой дом</h3>
 						<a class="card-more" href="project-page.html">
 							<span>Подробнее о проекте</span>
-							<img src="images/svg/arrow-diag.svg" alt="Подробнее о проекте">
+							<img src="/images/svg/arrow-diag.svg" alt="Подробнее о проекте">
 						</a>
 					</div>
+					
 					<div class="product-grid__item">
 						<a href="project-page.html" class="product-grid__item-img">
-							<img src="uploads/our-projects/our6.jpg" alt="Модульный киоск" />
+							<img src="/uploads/our-projects/our6.jpg" alt="Модульный киоск" />
 						</a>
 						<h3>Модульный киоск</h3>
 						<a class="card-more" href="project-page.html">
 							<span>Подробнее о проекте</span>
-							<img src="images/svg/arrow-diag.svg" alt="Подробнее о проекте">
+							<img src="/images/svg/arrow-diag.svg" alt="Подробнее о проекте">
 						</a>
 					</div>
+
 					<div class="product-grid__item">
 						<a href="project-page.html" class="product-grid__item-img">
-							<img src="uploads/our-projects/our7.jpg" alt="Модульный жилой дом" />
+							<img src="/uploads/our-projects/our7.jpg" alt="Модульный жилой дом" />
 						</a>
 						<h3>Модульный жилой дом</h3>
 						<a class="card-more" href="project-page.html">
 							<span>Подробнее о проекте</span>
-							<img src="images/svg/arrow-diag.svg" alt="Подробнее о проекте">
+							<img src="/images/svg/arrow-diag.svg" alt="Подробнее о проекте">
 						</a>
 					</div>
+
 					<div class="product-grid__item">
 						<a href="project-page.html" class="product-grid__item-img">
-							<img src="uploads/our-projects/our8.jpg" alt="Установка модуля" />
+							<img src="/uploads/our-projects/our8.jpg" alt="Установка модуля" />
 						</a>
 						<h3>Установка модуля</h3>
 						<a class="card-more" href="project-page.html">
 							<span>Подробнее о проекте</span>
-							<img src="images/svg/arrow-diag.svg" alt="Подробнее о проекте">
+							<img src="/images/svg/arrow-diag.svg" alt="Подробнее о проекте">
 						</a>
 					</div>
+
 					<div class="product-grid__item">
 						<a href="project-page.html" class="product-grid__item-img">
-							<img src="uploads/our-projects/our9.jpg" alt="Офис продаж" />
+							<img src="/uploads/our-projects/our9.jpg" alt="Офис продаж" />
 						</a>
 						<h3>Офис продаж</h3>
 						<a class="card-more" href="project-page.html">
 							<span>Подробнее о проекте</span>
-							<img src="images/svg/arrow-diag.svg" alt="Подробнее о проекте">
+							<img src="/images/svg/arrow-diag.svg" alt="Подробнее о проекте">
 						</a>
 					</div>
 				</div>
 
 				<div class="our-projects pagination">
 					<a class="pagination-prev" href="#">
-						<img src="images/svg/chevron-left.svg" />
+						<img src="/images/svg/chevron-left.svg" />
 					</a>
 					<a href="#">1</a>
 					<a href="#" class="active">2</a>
 					<a href="#">3</a>
 					<a href="#">4</a>
 					<a class="pagination-next" href="#">
-						<img src="images/svg/chevron-right.svg" />
+						<img src="/images/svg/chevron-right.svg" />
 					</a>
 				</div>
 			</div>
-			<!-- end product-catalog__content -->
+
 		</div>
-		<!----- end product-catalog ------->
 	</div>
-	<!-- // .container -->
 </section>
-<!--------- end product-catalog ----------->
+<!-- ----- end product-catalog ----- -->

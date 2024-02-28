@@ -4,12 +4,7 @@
 		<!----- strat breadcrumbs ----->
 		<div class="breadcrumbs breadcrumbs--dark breadcrumbs--offset">
 			<ul>
-				<li>
-					<a href="index.html">Главная</a>
-				</li>
-				<li>
-					<a href="../category.html">Каталог</a>
-				</li>
+				@@include('catalog-breadcrumbs-top.html')
 				<li>
 					<a href="#">Киоски</a>
 				</li>
@@ -36,7 +31,7 @@
 				@@include('../catalog-aside-mobile.html')
 
 				<!-- kioski -->
-				<div class="product-grid">
+				<div class="product-grid" data-grid="kioski">
 					<div class="product-grid__item">
 						<a href="/catalog-product-page.html" class="product-grid__item-img">
 							<img src="../uploads/catalog-products/kioski/kiosk1.jpg" alt="Модульный киоск №1" />

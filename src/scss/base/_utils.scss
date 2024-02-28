@@ -89,6 +89,11 @@
 	align-items: center;
 	justify-content: center;
 }
+.fx-v-jc {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
 
 .tablet-hide {
 	@include mw1024 {

@@ -55,6 +55,33 @@
 			display: block;
 			border-bottom: 1px solid var(--gray400);
 
+			& > span {
+				display: flex;
+				align-items: stretch;
+				justify-content: space-between;
+				font-size: 18px;
+				font-weight: 500;
+				line-height: 140%;
+				transition: background-color 0.2s;
+
+				& > a {
+					display: block;
+					padding: 20px;
+					width: 100%;
+				}
+
+				.drop-link {
+					display: none;
+					justify-content: center;
+					padding: 4px 10px;
+					cursor: pointer;
+
+					img {
+						width: 20px;
+					}
+				}
+			}
+
 			&:hover,
 			&.active {
 				padding: 0;
@@ -67,25 +94,6 @@
 				}
 			}
 
-			& > span {
-				padding: 20px;
-				display: flex;
-				align-items: center;
-				justify-content: space-between;
-				font-size: 18px;
-				font-weight: 500;
-				line-height: 140%;
-
-				.drop-link {
-					display: none;
-					align-items: center;
-					justify-content: center;
-					padding: 4px 0 4px 8px;
-					width: 24px;
-					height: 24px;
-					cursor: pointer;
-				}
-			}
 			&.drop-list {
 				& > span {
 					.drop-link {
@@ -248,6 +256,7 @@
 		justify-content: space-between;
 		padding: 20px;
 		border: 1px solid var(--gray400);
+		cursor: pointer;
 
 		&.opened + .aside-grid__filter-mobile {
 			display: block;

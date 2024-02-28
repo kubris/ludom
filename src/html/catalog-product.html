@@ -2,7 +2,10 @@
 <html lang="ru">
 	<head>
 		@@include('blocks/head.html')
-		<title>Каталог (Киоски)</title>
+
+		<!-- Шаблон списка продукта в каталоге catalog/catalog-offices.html -->
+		<title>Каталог Киоски - Лудом</title>
+		<meta name="description" content="Каталог продукции Киоски - Лудом" />
 	</head>
 	<body>
 			@@include('blocks/header.html')
@@ -21,8 +24,7 @@
 			
 			@@include('blocks/modal-search.html')
 
-		<script src="js/swiper-bundle.min.js"></script>
-		<script src="js/index.js"></script>
+			@@include('blocks/script-block.html')
 
 	</body>
 </html>
