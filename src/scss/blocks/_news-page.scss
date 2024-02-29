@@ -1,0 +1,28 @@
+// news-page
+.news-page {
+	.task-main {
+		display: flex;
+		flex-direction: row-reverse;
+
+		@include mw768 {
+			flex-direction: column-reverse;
+		}
+	}
+
+	.task-module + .task-module {
+		margin: 0;
+	}
+
+	.task-main__content {
+		max-width: 100%;
+	}
+
+	.task-main__img {
+		width: 40%;
+		min-width: 365px;
+
+		@include mw768 {
+			width: 100%;
+		}
+	}
+}
