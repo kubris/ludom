@@ -3,10 +3,25 @@
 	<div class="container">
 		<!-- breadcrumbs -->
 		<div class="breadcrumbs breadcrumbs--dark">
-			<ul>
-				<li><a href="/">Главная</a></li>
-				<li><a href="/news.html">Новости</a></li>
-				<li><a href="#">Модульный дом культуры в Суйде</a></li>
+			<ul itemscope itemtype="https://schema.org/BreadcrumbList">
+				<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="/" title="Главная" itemprop="item">
+						<span itemprop="name">Главная</span>
+						<meta itemprop="position" content="0">
+					</a>
+				</li>
+				<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="/news.html" title="Новости" itemprop="item">
+						<span itemprop="name">Новости</span>
+						<meta itemprop="position" content="1">
+					</a>
+				</li>
+				<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="/posts/news-dom-kultury-v-suide.html" title="Модульный дом культуры в Суйде" itemprop="item">
+						<span itemprop="name">Модульный дом культуры в Суйде</span>
+						<meta itemprop="position" content="2">
+					</a>
+				</li>
 			</ul>
 		</div>
 

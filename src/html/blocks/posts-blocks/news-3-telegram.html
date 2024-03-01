@@ -3,10 +3,25 @@
 	<div class="container">
 		<!-- breadcrumbs -->
 		<div class="breadcrumbs breadcrumbs--dark">
-			<ul>
-				<li><a href="/">Главная</a></li>
-				<li><a href="/news.html">Новости</a></li>
-				<li><a href="#">Мы запустили официальный Telegram-канал</a></li>				
+			<ul itemscope itemtype="https://schema.org/BreadcrumbList">
+				<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="/" title="Главная" itemprop="item">
+						<span itemprop="name">Главная</span>
+						<meta itemprop="position" content="0">
+					</a>
+				</li>
+				<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="/news.html" title="Новости" itemprop="item">
+						<span itemprop="name">Новости</span>
+						<meta itemprop="position" content="1">
+					</a>
+				</li>
+				<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="/posts/news-telegram.html" title="Мы запустили официальный Telegram-канал" itemprop="item">
+						<span itemprop="name">Мы запустили официальный Telegram-канал</span>
+						<meta itemprop="position" content="2">
+					</a>
+				</li>
 			</ul>
 		</div>
 

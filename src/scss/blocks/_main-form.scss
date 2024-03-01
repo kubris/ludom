@@ -2,10 +2,13 @@
 .main-form {
 	&__wrapper {
 		display: flex;
+		margin: 0 auto;
+		max-width: 1920px;
 		background-color: var(--gray200);
 	}
 
 	&__img {
+		width: 100%;
 		img {
 			width: 100%;
 			height: 100%;
@@ -18,6 +21,7 @@
 	}
 
 	&__form {
+		width: 100%;
 		display: flex;
 		flex-direction: column;
 		gap: 20px;
