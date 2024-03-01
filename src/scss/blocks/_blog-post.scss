@@ -121,7 +121,7 @@
 				}
 			}
 
-			h2 {
+			.h2 {
 				margin-bottom: 20px;
 				font-weight: 500;
 				font-size: 26px;
@@ -142,7 +142,7 @@
 					margin-top: 20px;
 					@include mw768 {margin-bottom: 15px}
 				}
-				& + h2 {
+				& + .h2 {
 					margin-top: 40px;
 					@include mw768 {margin-top: 30px}
 				}
