@@ -1,12 +1,26 @@
-<!-- ----- start product-catalog ----- -->
+<!--  start product-catalog  -->
 <section class="category-catalog offset product-catalog-section">
 	<div class="container">
 		<!-- strat breadcrumbs -->
 		<div class="breadcrumbs breadcrumbs--dark breadcrumbs--offset">
-			<ul>
-				@@include('catalog-breadcrumbs-top.html')
-				<li>
-					<a href="#">Киоски</a>
+			<ul itemscope itemtype="https://schema.org/BreadcrumbList">
+				<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="/" title="Главная" itemprop="item">
+						<span itemprop="name">Главная</span>
+						<meta itemprop="position" content="0">
+					</a>
+				</li>
+				<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="/category.html" title="Каталог" itemprop="item">
+						<span itemprop="name">Каталог</span>
+						<meta itemprop="position" content="1">
+					</a>
+				</li>
+				<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="/catalog/catalog-kiosk.html" title="Каталог Киоски" itemprop="item">
+						<span itemprop="name">Киоски</span>
+						<meta itemprop="position" content="2">
+					</a>
 				</li>
 			</ul>
 		</div>
@@ -24,71 +38,71 @@
 			<div class="product-catalog__content">
 				<div class="product-catalog__filter-toggle">
 					<span>Категории продуктов</span>
-					<img src="/images/svg/chevron-up.svg" />
+					<img src="/images/svg/chevron-up.svg" alt="">
 				</div>
 				@@include('../catalog-aside-mobile.html')
 
 				<!-- start kioski -->
 				<div class="product-grid" data-grid="kioski">
 					<div class="product-grid__item">
-						<a href="/catalog-product-page.html" class="product-grid__item-img">
-							<img src="/uploads/catalog-products/kioski/kiosk1.jpg" alt="Модульный киоск №1" />
+						<a href="/catalog/kioski/kiosk-1.html" class="product-grid__item-img">
+							<img src="/uploads/catalog-products/kioski/kiosk1.jpg" alt="Модульный киоск №1" >
 						</a>
 						<h3>Модульный киоск №1</h3>
 						<span>от 900 000 ₽</span>
 					</div>
 					<div class="product-grid__item">
-						<a href="/catalog-product-page.html" class="product-grid__item-img">
-							<img src="/uploads/catalog-products/kioski/kiosk2.jpg" alt="Модульный киоск №2" />
+						<a href="/catalog/kioski/kiosk-2.html" class="product-grid__item-img">
+							<img src="/uploads/catalog-products/kioski/kiosk2.jpg" alt="Модульный киоск №2" >
 						</a>
 						<h3>Модульный киоск №2</h3>
 						<span>от 850 000 ₽</span>
 					</div>
 					<div class="product-grid__item">
-						<a href="/catalog-product-page.html" class="product-grid__item-img">
-							<img src="/uploads/catalog-products/kioski/kiosk3.jpg" alt="Модульный киоск №3" />
+						<a href="/catalog/kioski/kiosk-3.html" class="product-grid__item-img">
+							<img src="/uploads/catalog-products/kioski/kiosk3.jpg" alt="Модульный киоск №3" >
 						</a>
 						<h3>Модульный киоск №3</h3>
 						<span>от 1 800 000 ₽</span>
 					</div>
 					<div class="product-grid__item">
-						<a href="/catalog-product-page.html" class="product-grid__item-img">
-							<img src="/uploads/catalog-products/kioski/kiosk4.jpg" alt="Модульный киоск №4" />
+						<a href="/catalog/kioski/kiosk-1.html" class="product-grid__item-img">
+							<img src="/uploads/catalog-products/kioski/kiosk4.jpg" alt="Модульный киоск №4" >
 						</a>
 						<h3>Модульный киоск №4</h3>
 						<span>от 1 350 000 ₽</span>
 					</div>
 					<div class="product-grid__item">
-						<a href="/catalog-product-page.html" class="product-grid__item-img">
-							<img src="/uploads/catalog-products/kioski/kiosk5.jpg" alt="Модульный киоск №5" />
+						<a href="/catalog/kioski/kiosk-2.html" class="product-grid__item-img">
+							<img src="/uploads/catalog-products/kioski/kiosk5.jpg" alt="Модульный киоск №5" >
 						</a>
 						<h3>Модульный киоск №5</h3>
 						<span>от 1 835 000 ₽</span>
 					</div>
 					<div class="product-grid__item">
-						<a href="/catalog-product-page.html" class="product-grid__item-img">
-							<img src="/uploads/catalog-products/kioski/kiosk6.jpg" alt="Модульный киоск №6" />
+						<a href="/catalog/kioski/kiosk-3.html" class="product-grid__item-img">
+							<img src="/uploads/catalog-products/kioski/kiosk6.jpg" alt="Модульный киоск №6" >
 						</a>
 						<h3>Модульный киоск №6</h3>
 						<span>от 1 275 000 ₽</span>
 					</div>
 					<div class="product-grid__item">
-						<a href="/catalog-product-page.html" class="product-grid__item-img">
-							<img src="/uploads/catalog-products/kioski/kiosk7.jpg" alt="Модульный киоск №7" />
+						<a href="/catalog/kioski/kiosk-1.html" class="product-grid__item-img">
+							<img src="/uploads/catalog-products/kioski/kiosk7.jpg" alt="Модульный киоск №7" >
 						</a>
 						<h3>Модульный киоск №7</h3>
 						<span>от 750 000 ₽</span>
 					</div>
 					<div class="product-grid__item">
-						<a href="/catalog-product-page.html" class="product-grid__item-img">
-							<img src="/uploads/catalog-products/kioski/kiosk8.jpg" alt="Модульный киоск №8" />
+						<a href="/catalog/kioski/kiosk-2.html" class="product-grid__item-img">
+							<img src="/uploads/catalog-products/kioski/kiosk8.jpg" alt="Модульный киоск №8" >
 						</a>
 						<h3>Модульный киоск №8</h3>
 						<span>от 1 170 000 ₽</span>
 					</div>
 					<div class="product-grid__item">
-						<a href="/catalog-product-page.html" class="product-grid__item-img">
-							<img src="/uploads/catalog-products/kioski/kiosk9.jpg" alt="Модульный киоск №9" />
+						<a href="/catalog/kioski/kiosk-3.html" class="product-grid__item-img">
+							<img src="/uploads/catalog-products/kioski/kiosk9.jpg" alt="Модульный киоск №9" >
 						</a>
 						<h3>Модульный киоск №9</h3>
 						<span>от 1 350 000 ₽</span>
@@ -98,14 +112,14 @@
 
 				<div class="product-catalog pagination">
 					<a class="pagination-prev" href="#">
-						<img src="/images/svg/chevron-left.svg" />
+						<img src="/images/svg/chevron-left.svg" alt="">
 					</a>
 					<a href="catalog-product-page.html" class="active">1</a>
 					<a href="catalog-product-page.html">2</a>
 					<a href="catalog-product-page.html">3</a>
 					<a href="catalog-product-page.html">4</a>
 					<a class="pagination-next" href="#">
-						<img src="/images/svg/chevron-right.svg" />
+						<img src="/images/svg/chevron-right.svg" alt="">
 					</a>
 				</div>
 
@@ -156,4 +170,4 @@
 	</div>
 	<!-- end container -->
 </section>
-<!-- ----- end product-catalog ----- -->
+<!--  end product-catalog  -->

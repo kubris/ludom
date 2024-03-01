@@ -1,8 +1,28 @@
-<!-- ----- start product-catalog ----- -->
+<!--  start product-catalog  -->
 <section class="category-catalog offset product-catalog-section">
 	<div class="container">
 		<!-- strat breadcrumbs -->
 		<div class="breadcrumbs breadcrumbs--dark breadcrumbs--offset">
+			<ul itemscope itemtype="https://schema.org/BreadcrumbList">
+				<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="/" title="Главная" itemprop="item">
+						<span itemprop="name">Главная</span>
+						<meta itemprop="position" content="0">
+					</a>
+				</li>
+				<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="/category.html" title="Каталог" itemprop="item">
+						<span itemprop="name">Каталог</span>
+						<meta itemprop="position" content="1">
+					</a>
+				</li>
+				<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="/catalog/catalog-greenhouses.html" title="Каталог Теплицы" itemprop="item">
+						<span itemprop="name">Теплицы</span>
+						<meta itemprop="position" content="2">
+					</a>
+				</li>
+			</ul>
 			<ul>
 				@@include('catalog-breadcrumbs-top.html')
 				<li>
@@ -25,29 +45,29 @@
 			<div class="product-catalog__content">
 				<div class="product-catalog__filter-toggle">
 					<span>Категории продуктов</span>
-					<img src="/images/svg/chevron-up.svg" />
+					<img src="/images/svg/chevron-up.svg" alt="">
 				</div>
 				@@include('../catalog-aside-mobile.html')
 
 				<!-- office buildings -->
 				<div class="product-grid" data-grid="greenhouse">
 					<div class="product-grid__item">
-						<a href="/catalog-product-page.html" class="product-grid__item-img">
-							<img src="/uploads/catalog-products/greenhouse/greenhouse-1.jpg" alt="Теплица №1" />
+						<a href="/catalog/greenhouses/greenhouse-1.html" class="product-grid__item-img">
+							<img src="/uploads/catalog-products/greenhouse/greenhouse-1.jpg" alt="Теплица №1" >
 						</a>
 						<h3>Теплица №1</h3>
 						<span>от 700 000 ₽</span>
 					</div>
 					<div class="product-grid__item">
-						<a href="/catalog-product-page.html" class="product-grid__item-img">
-							<img src="/uploads/catalog-products/greenhouse/greenhouse-2.jpg" alt="Теплица №2" />
+						<a href="/catalog/greenhouses/greenhouse-1.html" class="product-grid__item-img">
+							<img src="/uploads/catalog-products/greenhouse/greenhouse-2.jpg" alt="Теплица №2" >
 						</a>
 						<h3>Теплица №2</h3>
 						<span>от 1 500 000 ₽</span>
 					</div>
 					<div class="product-grid__item">
-						<a href="/catalog-product-page.html" class="product-grid__item-img">
-							<img src="/uploads/catalog-products/greenhouse/greenhouse-3.jpg" alt="Теплица №3" />
+						<a href="/catalog/greenhouses/greenhouse-1.html" class="product-grid__item-img">
+							<img src="/uploads/catalog-products/greenhouse/greenhouse-3.jpg" alt="Теплица №3" >
 						</a>
 						<h3>Теплица №3</h3>
 						<span>от 800 000 ₽</span>
@@ -57,14 +77,14 @@
 
 				<div class="product-catalog pagination">
 					<a class="pagination-prev" href="#">
-						<img src="/images/svg/chevron-left.svg" />
+						<img src="/images/svg/chevron-left.svg" alt="">
 					</a>
-					<a href="catalog-product-page.html" class="active">1</a>
-					<a href="catalog-product-page.html">2</a>
-					<a href="catalog-product-page.html">3</a>
-					<a href="catalog-product-page.html">4</a>
+					<a href="/catalog/catalog-greenhouses.html" class="active">1</a>
+					<a href="#">2</a>
+					<a href="#">3</a>
+					<a href="#">4</a>
 					<a class="pagination-next" href="#">
-						<img src="/images/svg/chevron-right.svg" />
+						<img src="/images/svg/chevron-right.svg" alt="">
 					</a>
 				</div>
 
@@ -119,4 +139,4 @@
 	</div>
 	<!-- end container -->
 </section>
-<!-- ----- end product-catalog ----- -->
+<!--  end product-catalog  -->

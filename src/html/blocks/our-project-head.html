@@ -1,10 +1,20 @@
-<!-- ----- start our-project-head ----- -->
+<!--  start our-project-head  -->
 <section class="our-projects-head">
 	<div class="container">
 		<div class="breadcrumbs breadcrumbs--dark">
-			<ul>
-				<li><a href="/">Главная</a></li>
-				<li><a href="#">Наши проекты</a></li>
+			<ul itemscope itemtype="https://schema.org/BreadcrumbList">
+				<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="/" title="Главная" itemprop="item">
+						<span itemprop="name">Главная</span>
+						<meta itemprop="position" content="0">
+					</a>
+				</li>
+				<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="/our-projects.html" title="Наши проекты" itemprop="item">
+						<span itemprop="name">Наши проекты</span>
+						<meta itemprop="position" content="1">
+					</a>
+				</li>
 			</ul>
 		</div>
 
@@ -17,4 +27,4 @@
 	</div>
 	<!-- end container -->
 </section>
-<!-- ----- end our-project-head ----- -->
+<!--  end our-project-head  -->

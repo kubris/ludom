@@ -1,10 +1,20 @@
-<!-- ----- start contacts ----- -->
+<!--  start contacts  -->
 <section class="contacts offset">
 	<div class="container">
 		<div class="breadcrumbs breadcrumbs--dark">
-			<ul>
-				<li><a href="/">Главная</a></li>
-				<li><a href="#">Контакты</a></li>
+			<ul itemscope itemtype="https://schema.org/BreadcrumbList">
+				<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="/" title="Главная" itemprop="item">
+						<span itemprop="name">Главная</span>
+						<meta itemprop="position" content="0">
+					</a>
+				</li>
+				<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="/contacts.html" title="Контакты" itemprop="item">
+						<span itemprop="name">Контакты</span>
+						<meta itemprop="position" content="1">
+					</a>
+				</li>
 			</ul>
 		</div>
 
@@ -35,4 +45,4 @@
 		</div>
 	</div>
 </section>
-<!-- ----- end contacts ----- -->
+<!--  end contacts  -->

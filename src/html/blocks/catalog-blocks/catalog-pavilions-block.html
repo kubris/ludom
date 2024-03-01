@@ -1,12 +1,26 @@
-<!-- ----- start product-catalog ----- -->
+<!--  start product-catalog  -->
 <section class="category-catalog offset product-catalog-section">
 	<div class="container">
 		<!-- strat breadcrumbs -->
 		<div class="breadcrumbs breadcrumbs--dark breadcrumbs--offset">
-			<ul>
-				@@include('catalog-breadcrumbs-top.html')
-				<li>
-					<a href="#">Торговые павильоны</a>
+			<ul itemscope itemtype="https://schema.org/BreadcrumbList">
+				<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="/" title="Главная" itemprop="item">
+						<span itemprop="name">Главная</span>
+						<meta itemprop="position" content="0">
+					</a>
+				</li>
+				<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="/category.html" title="Каталог" itemprop="item">
+						<span itemprop="name">Каталог</span>
+						<meta itemprop="position" content="1">
+					</a>
+				</li>
+				<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="/catalog/catalog-pavilions.html" title="Каталог Торговые павильоны" itemprop="item">
+						<span itemprop="name">Торговые павильоны</span>
+						<meta itemprop="position" content="2">
+					</a>
 				</li>
 			</ul>
 		</div>
@@ -25,42 +39,42 @@
 			<div class="product-catalog__content">
 				<div class="product-catalog__filter-toggle">
 					<span>Категории продуктов</span>
-					<img src="/images/svg/chevron-up.svg" />
+					<img src="/images/svg/chevron-up.svg" alt="">
 				</div>
 				@@include('../catalog-aside-mobile.html')
 
 				<div class="product-grid" data-grid="pavilion">
 					<div class="product-grid__item">
-						<a href="/catalog-product-page.html" class="product-grid__item-img">
-							<img src="/uploads/catalog-products/pavilion/pavilion-1.jpg" alt="Торговый павильон №1" />
+						<a href="/catalog/pavilions/pavilion-1.html" class="product-grid__item-img">
+							<img src="/uploads/catalog-products/pavilion/pavilion-1.jpg" alt="Торговый павильон №1" >
 						</a>
 						<h3>Торговый павильон №1</h3>
 						<span>от 2 000 000 ₽</span>
 					</div>
 					<div class="product-grid__item">
-						<a href="/catalog-product-page.html" class="product-grid__item-img">
-							<img src="/uploads/catalog-products/pavilion/pavilion-2.jpg" alt="Торговый павильон №2" />
+						<a href="/catalog/pavilions/pavilion-1.html" class="product-grid__item-img">
+							<img src="/uploads/catalog-products/pavilion/pavilion-2.jpg" alt="Торговый павильон №2" >
 						</a>
 						<h3>Торговый павильон №2</h3>
 						<span>от 2 500 000 ₽</span>
 					</div>
 					<div class="product-grid__item">
-						<a href="/catalog-product-page.html" class="product-grid__item-img">
-							<img src="/uploads/catalog-products/pavilion/pavilion-3.jpg" alt="Торговый павильон №3" />
+						<a href="/catalog/pavilions/pavilion-1.html" class="product-grid__item-img">
+							<img src="/uploads/catalog-products/pavilion/pavilion-3.jpg" alt="Торговый павильон №3" >
 						</a>
 						<h3>Торговый павильон №3</h3>
 						<span>от 3 000 000 ₽</span>
 					</div>
 					<div class="product-grid__item">
-						<a href="/catalog-product-page.html" class="product-grid__item-img">
-							<img src="/uploads/catalog-products/pavilion/pavilion-4.jpg" alt="Торговый павильон №4" />
+						<a href="/catalog/pavilions/pavilion-1.html" class="product-grid__item-img">
+							<img src="/uploads/catalog-products/pavilion/pavilion-4.jpg" alt="Торговый павильон №4" >
 						</a>
 						<h3>Торговый павильон №4</h3>
 						<span>от 3 500 000 ₽</span>
 					</div>
 					<div class="product-grid__item">
-						<a href="/catalog-product-page.html" class="product-grid__item-img">
-							<img src="/uploads/catalog-products/pavilion/pavilion-5.jpg" alt="Торговый павильон №5" />
+						<a href="/catalog/pavilions/pavilion-1.html" class="product-grid__item-img">
+							<img src="/uploads/catalog-products/pavilion/pavilion-5.jpg" alt="Торговый павильон №5" >
 						</a>
 						<h3>Торговый павильон №5</h3>
 						<span>от 3 500 000 ₽</span>
@@ -69,14 +83,14 @@
 
 				<div class="product-catalog pagination">
 					<a class="pagination-prev" href="#">
-						<img src="/images/svg/chevron-left.svg" />
+						<img src="/images/svg/chevron-left.svg" alt="">
 					</a>
-					<a href="catalog-product-page.html" class="active">1</a>
-					<a href="catalog-product-page.html">2</a>
-					<a href="catalog-product-page.html">3</a>
-					<a href="catalog-product-page.html">4</a>
+					<a href="/catalog/catalog-pavilions.html" class="active">1</a>
+					<a href="#">2</a>
+					<a href="#">3</a>
+					<a href="#">4</a>
 					<a class="pagination-next" href="#">
-						<img src="/images/svg/chevron-right.svg" />
+						<img src="/images/svg/chevron-right.svg" alt="">
 					</a>
 				</div>
 
@@ -131,4 +145,4 @@
 	</div>
 	<!-- end container -->
 </section>
-<!-- ----- end product-catalog ----- -->
+<!--  end product-catalog  -->
