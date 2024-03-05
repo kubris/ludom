@@ -1,0 +1,40 @@
+// eng-searches
+.eng-searches {
+	&__grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+		grid-gap: 30px;
+		@include mw1024 {
+			grid-gap: 15px;
+		}
+		@include mw768 {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__item {
+		padding: 50px;
+		display: flex;
+		align-items: flex-start;
+		flex-direction: column;
+		gap: 60px;
+		background: linear-gradient(99.6deg, rgb(237 237 237) 10.6%, rgb(237 237 237) 32.9%, rgb(255 255 255) 52.7%, rgb(235 235 235) 72.8%, rgb(255 255 255) 81.1%, rgb(241 241 241) 102.4%);
+		@include mw1024 {
+			padding: 35px 25px;
+		}
+		@include mw768 {
+			padding: 25px 15px;
+		}
+
+		&  .h3 {
+			font-size: clamp(20px, 3vw, 28px);
+			font-weight: 600;
+			margin-bottom: 10px;
+		}
+
+		&  .btn {
+			margin-top: auto;
+		}
+	}
+}

@@ -26,7 +26,11 @@
 			}
 			&:hover::before {
 				opacity: 1;
-			}
+			}			
+		}
+
+		.nav-link {
+			margin-bottom: 0;
 		}
 
 		&.active {

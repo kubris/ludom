@@ -1,0 +1,47 @@
+// --page-article
+article {
+	h2, 
+	.h2 {
+		margin-bottom: 30px;
+		color: var(--dark);
+		font-size: 36px;
+		font-weight: 600;
+		line-height: 130%;
+		text-transform: uppercase;
+
+		&.h2--small {
+			margin: 20px 0 5px;
+			font-size: 1.4em;
+			text-transform: unset;
+		}
+
+		@include mw768 {
+			margin-bottom: 20px;
+			font-size: 18px;
+		}
+	}
+
+	h3,
+	.h3 {
+		font-size: 1.2em;
+		font-weight: 600;
+		margin: 15px 0 10px;
+	}
+
+	ul {
+		margin: 15px 0;
+		li {
+			list-style-type: disc;
+			list-style-position: inside;
+		}
+	}
+	ol {
+		margin: 15px 0;
+		li {
+			list-style-position: inside;
+		}
+	}
+	p + p {
+		margin-top: 15px;
+	}
+}
