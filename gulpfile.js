@@ -9,7 +9,7 @@ require('./gulp/docs.js');
 gulp.task('default', 
 	gulp.series('clean:dev', 
 	gulp.parallel('html:dev', 'sass:dev', 'images:dev', 
-	//'fonts:dev', 
+	'fonts:dev', 
 	'uploads:dev', 'js:dev', 'root:dev'),
 	gulp.parallel('server:dev', 'watch:dev')
 ));

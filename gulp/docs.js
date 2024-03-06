@@ -1,27 +1,27 @@
 const gulp = require("gulp"),
-	// HTML
+
 	fileInclude = require("gulp-file-include"),
 	htmlclean = require("gulp-htmlclean"),
-	webpHTML = require('gulp-webp-html'),
-	//SASS
+	webpHTML = require('gulp-webp-html-nosvg'),
+
 	sass = require("gulp-sass")(require("sass")),
 	autoprefixer = require('gulp-autoprefixer'),
 	csso = require('gulp-csso'),
 	sassGlob = require("gulp-sass-glob"),
-	webpCss = require('gulp-webp-css'),
-	//ETC
+	//webpCss = require('gulp-webp-css'),
+
 	server = require("gulp-server-livereload"),
 	clean = require("gulp-clean"),
 	fs = require("fs"),
 	groupMedia = require("gulp-group-css-media-queries"),
 	plumber = require("gulp-plumber"),
 	notify = require("gulp-notify"),
-	// Images
-	imagemin = require("gulp-imagemin"),
+
+	imagemin = require("gulp-imagemin");
 	webp = require("gulp-webp");
 
-const webpack = require("webpack-stream");
-const babel = require("gulp-babel");
+//const webpack = require("webpack-stream");
+//const babel = require("gulp-babel");
 
 // === VARIABLES ===
 // -- html include
@@ -46,9 +46,9 @@ const plumberNotify = (title) => {
 };
 
 // -- babel
-const babelSettings = {
-	presets: ["@babel/preset-env"],
-};
+// const babelSettings = {
+// 	presets: ["@babel/preset-env"],
+// };
 // end VARIABLES
 
 // === clean docs ===
@@ -66,8 +66,8 @@ gulp.task("html:docs", function () {
 		.src(["./src/html/**/*.html", "!./src/html/blocks/**/*.html"])
 		.pipe(plumber(plumberNotify("HTML")))
 		.pipe(fileInclude(fileIncludeSettings))
-		//.pipe(webpHTML())
-		//.pipe(htmlclean())
+		.pipe(webpHTML())
+		.pipe(htmlclean())
 		.pipe(gulp.dest("./docs/"));
 });
 // end HTML include
@@ -76,14 +76,15 @@ gulp.task("html:docs", function () {
 gulp.task("sass:docs", function () {
 	return gulp
 		.src("./src/scss/*.scss")
-		.pipe(plumber(plumberNotify("SASS")))
 		.pipe(sassGlob())
-		.pipe(sass())
-		//.pipe(webpCss())
+		.pipe(sass())		
+		.pipe(gulp.dest("./docs/css/"))
+		.pipe(gulp.src("./docs/css/*.css"))
 		.pipe(groupMedia())
-		.pipe(autoprefixer(['last 15 versions', '> 1%'], { cascade: true }))		
-		//.pipe(csso())
-		.pipe(gulp.dest("./docs/css/"));
+		.pipe(autoprefixer(['last 15 versions', '> 1%'], { cascade: true }))
+		.pipe(csso())
+		//.pipe(webpCss())
+		.pipe(gulp.dest("./docs/css/"))
 });
 // end SCSS
 
@@ -91,10 +92,10 @@ gulp.task("sass:docs", function () {
 gulp.task("images:docs", function () {
 	return gulp
 		.src("./src/images/**/*")
-		//.pipe(webp())
-		//.pipe(gulp.dest("./docs/images/"))
-		//.pipe(gulp.src("./src/images/**/*"))
-		//.pipe(imagemin({ verbose: true }))
+		.pipe(webp())
+		.pipe(gulp.dest("./docs/images/"))
+		.pipe(gulp.src("./src/images/**/*"))
+		.pipe(imagemin({ verbose: true }))
 		.pipe(gulp.dest("./docs/images/"));
 });
 // end IMAGES
@@ -102,7 +103,7 @@ gulp.task("images:docs", function () {
 // === FONTS ===
 gulp.task("fonts:docs", function () {
 	return gulp
-		.src("./src/fonts/**/*")
+		.src("./src/fonts/**/*.*")
 		.pipe(gulp.dest("./docs/fonts/"));
 });
 // === end FONTS ===
@@ -110,7 +111,8 @@ gulp.task("fonts:docs", function () {
 // === UPLOADS ===
 gulp.task('uploads:docs', function(){
 	return gulp.src('./src/uploads/**/*')
-		//.pipe(imagemin({ verbose: true }))
+		.pipe(webp())
+		.pipe(imagemin({ verbose: true }))
 		.pipe(gulp.dest('./docs/uploads/'))
 });
 // === end UPLOADS ===

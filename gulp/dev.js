@@ -91,8 +91,7 @@ gulp.task('images:dev', function(){
 
 // === FONTS ===
 gulp.task('fonts:dev', function(){
-	return gulp.src('./src/fonts/**/*')
-		.pipe(changed('./build/fonts/'))
+	return gulp.src('./src/fonts/**/*.*')
 		.pipe(gulp.dest('./build/fonts/'))
 });
 // === end FONTS ===
@@ -138,7 +137,7 @@ gulp.task('watch:dev', function(){
 	gulp.watch('./src/scss/**/*.scss', gulp.parallel('sass:dev'));
 	gulp.watch('./src/**/*.html', gulp.parallel('html:dev'));
 	gulp.watch('./src/images/**/*', gulp.parallel('images:dev'));
-	//gulp.watch('./src/fonts/**/*', gulp.parallel('fonts:dev'));
+	gulp.watch('./src/fonts/**/*', gulp.parallel('fonts:dev'));
 	gulp.watch('./src/uploads/**/*', gulp.parallel('uploads:dev'));
 	gulp.watch('./src/*.+(ico|php|htaccess|txt)', gulp.parallel('root:dev'));
 	gulp.watch('./src/js/**/*.js', gulp.parallel('js:dev'));
