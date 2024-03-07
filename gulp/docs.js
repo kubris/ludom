@@ -89,12 +89,17 @@ gulp.task("sass:docs", function () {
 // end SCSS
 
 // === IMAGES ===
+gulp.task("imagesWebp:docs", function () {
+	return gulp
+		.src("./src/images/**/*")
+		.pipe(webp())
+		.pipe(gulp.dest("./docs/images/"))
+});
 gulp.task("images:docs", function () {
 	return gulp
 		.src("./src/images/**/*")
 		.pipe(imagemin({ verbose: true }))
-		.pipe(webp())
-		.pipe(gulp.dest("./docs/images/"));
+		.pipe(gulp.dest("./docs/images/"))
 });
 // end IMAGES
 
@@ -107,11 +112,16 @@ gulp.task("fonts:docs", function () {
 // === end FONTS ===
 
 // === UPLOADS ===
+gulp.task('uploadsWebp:docs', function(){
+	return gulp.src('./src/uploads/**/*')
+	.pipe(webp())		
+	.pipe(gulp.dest('./docs/uploads/'))
+});
+
 gulp.task('uploads:docs', function(){
 	return gulp.src('./src/uploads/**/*')
-		.pipe(imagemin({ verbose: true }))
-		.pipe(webp())		
-		.pipe(gulp.dest('./docs/uploads/'))
+	.pipe(imagemin({ verbose: true }))
+	.pipe(gulp.dest('./docs/uploads/'))
 });
 // === end UPLOADS ===
 

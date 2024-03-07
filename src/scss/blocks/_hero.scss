@@ -51,7 +51,7 @@
 // -- hero
 .hero {
 	@include mw768 {
-		background: linear-gradient(0deg, rgba(248, 249, 250, 0.8) 0%, rgba(248, 249, 250, 0.8) 100%), url(../uploads/hero/hero-home.jpg);
+		background-image: url("../uploads/hero/hero-home-mobile-blur.jpg");
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: cover;

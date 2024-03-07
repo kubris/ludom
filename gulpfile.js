@@ -18,7 +18,7 @@ gulp.task('default',
 gulp.task(
 	'docs', 
 	gulp.series('clean:docs', 
-		gulp.parallel('html:docs', 'sass:docs', 'images:docs', 'fonts:docs', 'uploads:docs', 'js:docs', 'root:docs'),
+		gulp.parallel('html:docs', 'sass:docs', 'imagesWebp:docs', 'images:docs', 'fonts:docs', 'uploadsWebp:docs', 'uploads:docs', 'js:docs', 'root:docs'),
 		gulp.parallel('server:docs')
 ));
 // === end GULP RUN ===
