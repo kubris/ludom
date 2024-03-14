@@ -62,7 +62,7 @@
 				}
 
 				h1 {
-					max-width: 775px;
+					// max-width: 775px;
 					font-weight: 600;
 					font-size: 36px;
 					line-height: 130%;
@@ -172,7 +172,7 @@
 			}
 
 			ul {
-				font-size: 16px;
+				font-size: inherit;
 				color: var(--dark);
 				list-style-type: none;
 				@include mw768 {

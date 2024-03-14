@@ -70,6 +70,17 @@
 // post-list
 .post {
 
+	&-swiper-wrapper {
+		padding: 10px 0;
+	}
+
+	&-item {
+		transition: box-shadow 0.25s;
+		&:hover {
+			box-shadow: 3px 3px 8px #11111155;
+		}
+	}
+
 	&-list {
 		&:not(.tbc) {display: grid}
 		grid-template-columns: repeat(4, 1fr);

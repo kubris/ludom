@@ -91,7 +91,7 @@ gulp.task("sass:docs", function () {
 // === IMAGES ===
 gulp.task("imagesWebp:docs", function () {
 	return gulp
-		.src("./src/images/**/*")
+		.src("./src/images/**/*.+(jpg|jpeg|png)")
 		.pipe(webp())
 		.pipe(gulp.dest("./docs/images/"))
 });
@@ -113,13 +113,13 @@ gulp.task("fonts:docs", function () {
 
 // === UPLOADS ===
 gulp.task('uploadsWebp:docs', function(){
-	return gulp.src('./src/uploads/**/*')
+	return gulp.src("./src/uploads/**/*.+(jpg|jpeg|png)")
 	.pipe(webp())		
 	.pipe(gulp.dest('./docs/uploads/'))
 });
 
 gulp.task('uploads:docs', function(){
-	return gulp.src('./src/uploads/**/*')
+	return gulp.src("./src/uploads/**/*")
 	.pipe(imagemin({ verbose: true }))
 	.pipe(gulp.dest('./docs/uploads/'))
 });
@@ -127,7 +127,7 @@ gulp.task('uploads:docs', function(){
 
 // === ROOT FOLDER files ===
 gulp.task('root:docs', function(){
-	return gulp.src('./src/*.+(ico|php|htaccess|txt)')
+	return gulp.src("./src/*.+(ico|php|htaccess|txt)")
 		.pipe(gulp.dest('./docs/'))
 });
 // === end ROOT FOLDER files ===

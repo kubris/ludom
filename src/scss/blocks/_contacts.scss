@@ -1,8 +1,6 @@
 .socials {
 	display: inline-flex;
 	gap: 20px;
-	& > a img { transition: filter 0.3s }
-	& > a:hover img { filter: contrast(20) }
 }
 
 // --contacts

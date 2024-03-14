@@ -829,8 +829,8 @@ if (document.querySelector(".thb") && document.querySelector(".tbc")) {
 // === end BLOG TAB
 
 // === start BLOG POSTLINK
-if (document.querySelector(".post-item")) {
-	const allPosts = document.querySelectorAll(".post-item[data-postlink]");
+if (document.querySelector("[data-postlink]")) {
+	const allPosts = document.querySelectorAll("[data-postlink]");
 
 	allPosts.forEach((post) => {
 		post.addEventListener("click", (e) => {

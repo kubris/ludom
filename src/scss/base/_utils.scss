@@ -140,6 +140,13 @@
 	}
 }
 
+[data-postlink] {cursor: pointer}
+
+.no-pseudo > *::before,
+.no-pseudo > *::after {
+	content: unset !important;
+}
+
 //animation: show 0.3s linear;
 @keyframes show {
 	from {
