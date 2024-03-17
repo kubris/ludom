@@ -1,8 +1,7 @@
-html {font-size: 10px}
-html,
-body {
-	scroll-behavior: smooth;
+html {
+	font-size: 10px;
 }
+
 body {
 	display: flex;
 	flex-direction: column;
@@ -28,4 +27,15 @@ section.offset {
 .title-block.middle-offset {
 	margin-bottom: 30px;
 	@include mw768 {margin-bottom: 20px}
+}
+
+.page-article {
+	line-height: 1.6;
+}
+.article__btn {
+	margin: 50px 0 80px;
+	text-align: center;
+	@include mw768 {
+		margin: 25px 0 35px;
+	}
 }
