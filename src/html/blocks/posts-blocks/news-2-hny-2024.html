@@ -26,28 +26,7 @@
 		</div>
 
 		<!-- dropdown filter -->
-		<div class="blogpage-head__title">
-			<div class="blogpage-posts">
-				<span class="drop"> Темы и статьи </span>
-				<ul class="droplist">
-					<li>
-						<a href="#">Модульные здания</a>
-					</li>
-					<li>
-						<a href="#">Технологии будущего</a>
-					</li>
-					<li>
-						<a href="#">Инновационные модульные решения</a>
-					</li>
-					<li>
-						<a href="#">Модульные технологий в промышленности</a>
-					</li>
-					<li>
-						<a href="#">Преимущества модульного строительства</a>
-					</li>
-				</ul>
-			</div>
-		</div>
+		@@include('../blog-themes-aside-mobile.html')
 
 		<div class="blogpage-module">
 			<!-- blogpost-head -->
@@ -144,99 +123,12 @@
 				</p>
 				<button class="btn btn--big btn--blue jsOpenModal">Оставить заявку</button>
 
-				<div class="socials blogpost">
-					<a class="socials-item">
-						<img src="/images/svg/ws-g.svg" alt="YouTube" >
-					</a>
-					<a class="socials-item">
-						<img src="/images/svg/tg-g.svg" alt="WhatsApp" >
-					</a>
-					<a class="socials-item">
-						<img src="/images/svg/lk-g.svg" alt="Telegram" >
-					</a>
-				</div>
+				@@include('../blog-socials-block.html')
 			</article>
 			<!-- end blogpost-single -->
 
 			<!-- blogpost aside -->
-			<div class="blogpage-module__aside">
-				<div class="h3">Темы и статьи</div>
-
-				<div class="entries">
-					<div class="h4">Модульные здания</div>
-					<ul class="entries-list">
-						<li>
-							<a href="#">История модульного строительства</a>
-						</li>
-						<li>
-							<a href="#">Технологии производства модульных зданий</a>
-						</li>
-						<li>
-							<a href="#">Преимущества модульных зданий</a>
-						</li>
-					</ul>
-				</div>
-
-				<div class="entries">
-					<div class="h4">Технологии будущего</div>
-					<ul class="entries-list">
-						<li>
-							<a href="#">Проектирование модульных зданий</a>
-						</li>
-						<li>
-							<a href="#">Материалы для модульных конструкций</a>
-						</li>
-						<li>
-							<a href="#">Экологичность модульных зданий</a>
-						</li>
-					</ul>
-				</div>
-
-				<div class="entries">
-					<div class="h4">Инновационные модульные решения</div>
-					<ul class="entries-list">
-						<li>
-							<a href="#">Безопасность модульных зданий</a>
-						</li>
-						<li>
-							<a href="#">Энергоэффективность модульных зданий</a>
-						</li>
-						<li>
-							<a href="#">Строительство модульных домов</a>
-						</li>
-					</ul>
-				</div>
-
-				<div class="entries">
-					<div class="h4">Модульные технологий в промышленности</div>
-					<ul class="entries-list">
-						<li>
-							<a href="#">Применение модульных зданий в различных отраслях</a>
-						</li>
-						<li>
-							<a href="#">Особенности монтажа модульных зданий</a>
-						</li>
-						<li>
-							<a href="#">Обслуживание и ремонт модульных зданий</a>
-						</li>
-					</ul>
-				</div>
-
-				<div class="entries">
-					<div class="h4">Преимущества модульного строительства</div>
-					<ul class="entries-list">
-						<li>
-							<a href="#">Примеры успешных проектов с использованием модульных зданий</a>
-						</li>
-						<li>
-							<a href="#">Правовые аспекты модульного строительства</a>
-						</li>
-						<li>
-							<a href="#">Экономические преимущества модульных зданий</a>
-						</li>
-					</ul>
-				</div>
-			</div>
+			@@include('../blog-themes-aside.html')
 			<!-- end blogpost aside -->
 		</div>
 		<!-- end blogpage-module -->

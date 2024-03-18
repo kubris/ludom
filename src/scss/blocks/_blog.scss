@@ -102,7 +102,7 @@
 		cursor: pointer;
 
 		@include mw768 {
-			margin: 0 auto;
+			margin: 0 auto!important;
 			max-width: 380px;
 		}
 	}
