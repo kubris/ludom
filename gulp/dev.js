@@ -106,7 +106,7 @@ gulp.task('uploads:dev', function(){
 
 // === ROOT FOLDER files ===
 gulp.task('root:dev', function(){
-	return gulp.src('./src/*.+(ico|php|htaccess|txt)')
+	return gulp.src('./src/*.+(ico|php|htaccess|txt)', { dot: true })
 		.pipe(changed('./build/'))
 		.pipe(gulp.dest('./build/'))
 });

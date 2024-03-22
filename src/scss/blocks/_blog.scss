@@ -99,6 +99,7 @@
 		display: flex;
 		flex-direction: column;
 		gap: 8px;
+		height: auto;
 		cursor: pointer;
 
 		@include mw768 {

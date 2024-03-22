@@ -78,6 +78,7 @@
 
 					img {
 						width: 20px;
+						height: 20px;
 					}
 				}
 			}
@@ -98,6 +99,7 @@
 				& > span {
 					.drop-link {
 						display: flex;
+						align-items: center;
 					}
 				}
 

@@ -127,7 +127,7 @@ gulp.task('uploads:docs', function(){
 
 // === ROOT FOLDER files ===
 gulp.task('root:docs', function(){
-	return gulp.src("./src/*.+(ico|php|htaccess|txt)")
+	return gulp.src("./src/*.+(ico|php|htaccess|txt)", { dot: true })
 		.pipe(gulp.dest('./docs/'))
 });
 // === end ROOT FOLDER files ===

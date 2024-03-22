@@ -67,8 +67,7 @@
 				<!-- start blogpost-module -->
 				<div class="blogpage-module">
 					<article class="blogpost-module__single">
-						<img src="/uploads/posts/post-single.jpg"
-							  alt="Post Image">
+						<img src="/uploads/post/7.jpg" alt="Особенности ЛСТК комплектов">
 
 						<h2>Особенности ЛСТК</h2>
 
@@ -126,9 +125,13 @@
 			</div>
 			<!-- end container -->
 		</section>
-		<!--  end product-page-hero  -->
-
-		@@include('../blocks/blogpost-slider.html')
+		<!--  end blogpage-head  -->
+		
+		<section class="blog offset">
+			<div class="container">
+				@@include('../blocks/post-sliders/main-lstk.html')
+			</div>
+		</section>
 
 		@@include('../blocks/blog.html')
 
